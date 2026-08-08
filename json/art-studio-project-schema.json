@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "literaryfriend-art-project/v1",
+  "title": "LiteraryFriend Art Studio Project",
+  "type": "object",
+  "required": ["schema", "id", "title", "document", "layers"],
+  "properties": {
+    "schema": {"const":"literaryfriend-art-project/v1"},
+    "id": {"type":"string"},
+    "title": {"type":"string"},
+    "document": {"type":"object"},
+    "layers": {"type":"array"},
+    "createdAt": {"type":"string"},
+    "updatedAt": {"type":"string"}
+  }
+}

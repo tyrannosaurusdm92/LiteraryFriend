@@ -1,0 +1,8 @@
+{
+  "schema": "literaryfriend.backend-config.v1",
+  "webAppUrl": "https://script.google.com/macros/s/AKfycbxs5m-v5PQt2LZHO9T-OEckMim_jVDtvOgGeQJzR_bQ34FhbHvMFWssi1GQnBnWosXM/exec",
+  "appsScriptLibraryUrl": "https://script.google.com/macros/library/d/1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD/1",
+  "appsScriptLibraryId": "1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD",
+  "appsScriptLibraryVersion": 1,
+  "notes": "Browser clients call the deployed web-app URL. The Apps Script library URL is recorded for backend project configuration/reference."
+}

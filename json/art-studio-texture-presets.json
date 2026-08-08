@@ -1,0 +1,12 @@
+{
+  "schema": "literaryfriend/texture-presets/v1",
+  "presets": [
+    {"id":"paper","name":"Paper Grain","density":0.14,"scale":1,"opacity":0.22,"blend":"multiply"},
+    {"id":"linen","name":"Linen","density":0.22,"scale":5,"opacity":0.18,"blend":"multiply"},
+    {"id":"canvas","name":"Canvas Weave","density":0.28,"scale":8,"opacity":0.20,"blend":"overlay"},
+    {"id":"speckle","name":"Ink Speckle","density":0.10,"scale":2,"opacity":0.28,"blend":"multiply"},
+    {"id":"halftone","name":"Halftone","density":0.35,"scale":7,"opacity":0.20,"blend":"soft-light"},
+    {"id":"dust","name":"Dust","density":0.08,"scale":3,"opacity":0.22,"blend":"screen"},
+    {"id":"vignette","name":"Vignette","density":0.35,"scale":1,"opacity":0.35,"blend":"multiply"}
+  ]
+}

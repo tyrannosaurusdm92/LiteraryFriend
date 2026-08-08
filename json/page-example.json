@@ -1,0 +1,18 @@
+{
+  "schema": "literaryfriend.interactive-book.page.v1",
+  "id": "page-example",
+  "title": "Example Page",
+  "type": "article",
+  "blocks": [
+    { "type": "heading", "level": 1, "text": "Chapter One" },
+    { "type": "paragraph", "text": "Upload one or many JSON files to add pages without replacing your cover art." },
+    { "type": "callout", "text": "Number filenames such as 001.json, 002.json, and 003.json to preserve a predictable import order." }
+  ],
+  "design": {
+    "background": "#f4ecd8",
+    "ink": "#2a2118",
+    "accent": "#8b4a2f",
+    "pattern": "paper",
+    "font": "serif"
+  }
+}

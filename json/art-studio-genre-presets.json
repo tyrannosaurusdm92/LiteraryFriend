@@ -1,0 +1,14 @@
+{
+  "schema": "literaryfriend/genre-art-presets/v1",
+  "presets": [
+    {"id":"literary","name":"Literary Fiction","prompt":"editorial literary cover art, symbolic focal image, subtle visual metaphor, restrained palette, sophisticated negative space, print-ready composition, no typography"},
+    {"id":"fantasy","name":"Fantasy","prompt":"epic fantasy cover art, atmospheric depth, dramatic light, rich painterly detail, cinematic focal point, room for title and author, no typography"},
+    {"id":"scifi","name":"Science Fiction","prompt":"science fiction book cover art, speculative technology, cinematic scale, luminous atmosphere, bold silhouette, intelligent visual storytelling, no typography"},
+    {"id":"thriller","name":"Thriller","prompt":"psychological thriller cover art, high tension, stark contrast, ominous composition, cinematic shadows, strong central mystery, no typography"},
+    {"id":"horror","name":"Horror","prompt":"horror cover art, unsettling atmosphere, controlled darkness, eerie texture, disturbing but elegant visual motif, print-ready, no typography"},
+    {"id":"romance","name":"Romance","prompt":"romance cover art, emotionally intimate composition, warm cinematic light, expressive atmosphere, elegant color harmony, no typography"},
+    {"id":"memoir","name":"Memoir","prompt":"memoir cover art, intimate documentary mood, symbolic personal detail, editorial photography sensibility, thoughtful negative space, no typography"},
+    {"id":"minimal","name":"Minimal","prompt":"minimalist book cover art, one striking symbolic element, generous negative space, refined composition, sophisticated print design, no typography"},
+    {"id":"ya","name":"Young Adult","prompt":"young adult cover art, emotionally vivid focal character or symbol, energetic modern composition, cinematic atmosphere, strong genre readability, no typography"}
+  ]
+}

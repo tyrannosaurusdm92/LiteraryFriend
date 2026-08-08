@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "literaryfriend.interactive-book.page.v1",
+  "title": "LiteraryFriend Interactive Book Page",
+  "type": "object",
+  "required": ["title"],
+  "properties": {
+    "schema": { "const": "literaryfriend.interactive-book.page.v1" },
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "type": { "enum": ["article", "image", "record", "blank"] },
+    "html": { "type": "string" },
+    "text": { "type": "string" },
+    "image": { "type": "string" },
+    "imageUrl": { "type": "string" },
+    "src": { "type": "string" },
+    "blocks": { "type": "array" },
+    "data": {},
+    "design": {
+      "type": "object",
+      "properties": {
+        "background": { "type": "string" },
+        "ink": { "type": "string" },
+        "accent": { "type": "string" },
+        "pattern": { "enum": ["plain", "paper", "parchment", "linen", "grid", "dots"] },
+        "font": { "enum": ["serif", "sans", "mono"] },
+        "margin": { "type": "number" },
+        "pageNumbers": { "type": "boolean" },
+        "textureUrl": { "type": "string" },
+        "textureDataUrl": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "literaryfriend/backend-config/v1",
+  "service": "LiteraryFriend Backend",
+  "webAppUrl": "https://script.google.com/macros/s/AKfycbxs5m-v5PQt2LZHO9T-OEckMim_jVDtvOgGeQJzR_bQ34FhbHvMFWssi1GQnBnWosXM/exec",
+  "libraryUrl": "https://script.google.com/macros/library/d/1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD/1",
+  "projectId": "literaryfriend-art-studio",
+  "imageAction": "image.generate",
+  "chatAction": "chat",
+  "healthAction": "health",
+  "notes": "Protected actions use the backend's repository/project-token authentication. Secrets are stored only in the browser when the user supplies them."
+}

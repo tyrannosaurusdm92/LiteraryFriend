@@ -1,0 +1,20 @@
+{
+  "schema": "literaryfriend.interactive-book.sizes.v1",
+  "unit": "in",
+  "presets": [
+    { "id": "digest", "label": "Paperback — Digest / US Trade", "binding": "paperback", "width": 5.5, "height": 8.5, "notes": "Standard fiction, memoirs, and poetry" },
+    { "id": "trade", "label": "Paperback — Standard Trade", "binding": "paperback", "width": 6, "height": 9, "notes": "Non-fiction, textbooks, and larger novels" },
+    { "id": "small-trade", "label": "Paperback — Small Trade", "binding": "paperback", "width": 5, "height": 8, "notes": "Compact novels and literary fiction" },
+    { "id": "mass-market", "label": "Paperback — Mass Market", "binding": "paperback", "width": 4.25, "height": 6.87, "notes": "Pocket books, genre fiction, and thrillers" },
+    { "id": "hardcover-trade", "label": "Hardcover — US Trade", "binding": "hardcover", "width": 6, "height": 9 },
+    { "id": "hardcover-royal", "label": "Hardcover — Royal", "binding": "hardcover", "width": 6.14, "height": 9.21 },
+    { "id": "hardcover-compact", "label": "Hardcover — Compact / Novella", "binding": "hardcover", "width": 5.5, "height": 8.5 },
+    { "id": "hardcover-textbook", "label": "Hardcover — Textbook / Manual", "binding": "hardcover", "width": 7, "height": 10 },
+    { "id": "hardcover-manual-large", "label": "Hardcover — Large Manual", "binding": "hardcover", "width": 8.5, "height": 11 },
+    { "id": "hardcover-child-portrait", "label": "Hardcover — Children's Portrait", "binding": "hardcover", "width": 8, "height": 10 },
+    { "id": "hardcover-child-landscape", "label": "Hardcover — Children's Landscape", "binding": "hardcover", "width": 10, "height": 8 },
+    { "id": "hardcover-art-square", "label": "Hardcover — Coffee Table", "binding": "hardcover", "width": 10, "height": 10 },
+    { "id": "hardcover-art-large", "label": "Hardcover — Large Coffee Table", "binding": "hardcover", "width": 12, "height": 12 },
+    { "id": "custom", "label": "Custom", "binding": "custom", "width": 6, "height": 9 }
+  ]
+}
