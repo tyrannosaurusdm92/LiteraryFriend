@@ -1,0 +1,9 @@
+LiteraryFriend v1 backend links
+
+Web app endpoint:
+https://script.google.com/macros/s/AKfycbxs5m-v5PQt2LZHO9T-OEckMim_jVDtvOgGeQJzR_bQ34FhbHvMFWssi1GQnBnWosXM/exec
+
+Apps Script library:
+https://script.google.com/macros/library/d/1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD/1
+
+The backend source in this folder is the supplied LiteraryFriend_Backend.gs and is not replaced or extended by this frontend package.

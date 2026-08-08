@@ -1,0 +1,26 @@
+LiteraryFriend Version 1 — Build Validation Report
+
+Generated: 2026-08-07 (America/New_York task date)
+
+PASS — Top-level structure: actual=['assets', 'backend', 'css', 'docs', 'index.html', 'js', 'json']
+PASS — Single HTML entry: [PosixPath('index.html')]
+PASS — JavaScript syntax: []
+PASS — JSON parsing: []
+PASS — Backend byte identity: aa7b81d7f0eeeebd95e296026eec8065e87697e3d0c1faa7586c5745b0732a10
+PASS — Backend URLs wired: endpoint + library present
+PASS — Local runtime references: []
+PASS — No external JavaScript dependency: []
+PASS — No unsupported AI backend routes: chat/image.generate absent
+PASS — Backend action coverage: backend=85, console=85, missing=[]
+PASS — No bundled font binaries: []
+PASS — Updock limited to brand styles: ['css/book-studio.css', 'css/app.css', 'css/merged.css', 'css/art-studio-styles.css']
+PASS — Persistent compilation credit: footer present
+PASS — Docs files present: required docs
+PASS — Docs viewer bundled: embedded file:// viewer
+PASS — Retired legacy project dataset removed: []
+PASS — Literary corpus retained: 16192
+PASS — Preferred starter stories retained: both works present
+PASS — Backend links file: both references
+PASS — Version 1 app: frontend version 1
+
+Automated browser note: this execution environment enforces an organization policy that blocks file:// and localhost pages in Chromium, so visual browser smoke testing could not be run here. Direct-file compatibility was instead audited through local-reference checks, bundled-template/corpus fallbacks, syntax checks, and removal of required external JavaScript.

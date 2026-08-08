@@ -1,0 +1,5 @@
+/* Early-2000s desktop flourishes kept intentionally separate from core layout. */
+.retro-bevel { border:2px outset #c8bc9d; background:#ded0ae; }
+.retro-inset { border:2px inset #c8bc9d; background:#fffdf5; }
+.marquee-badge { font:700 10px "Courier New",monospace; background:#051f24; color:#00ffff; border:1px solid #00ffff; padding:2px 5px; white-space:nowrap; }
+.hr-pixels { height:3px; border:0; background:repeating-linear-gradient(90deg,#184c54 0 6px,#ca6309 6px 12px,#fff8e5 12px 18px); }

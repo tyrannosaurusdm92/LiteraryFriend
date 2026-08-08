@@ -1,0 +1,465 @@
+{
+  "schema": "literaryfriend.manifest.v1",
+  "name": "LiteraryFriend",
+  "version": "1",
+  "status": "pre-deployment",
+  "entry": "index.html",
+  "folders": [
+    "js",
+    "css",
+    "json",
+    "assets",
+    "docs",
+    "backend"
+  ],
+  "projectCredit": "Project Compiled by William Saville AKA The Transgender T-Rex #TheTransgenderTRex",
+  "features": {
+    "writerWorkspace": true,
+    "bookBuilderIntegrated": true,
+    "artStudioIntegrated": true,
+    "literaryAssistant": true,
+    "literaryCorpusRecords": 16192,
+    "extendedSpecialistUniqueRecords": 16264,
+    "docsViewer": true,
+    "cloudAccountConsole": true,
+    "directFileLaunchDesigned": true,
+    "freeLocalCore": true,
+    "externalPageFlipRequired": false
+  },
+  "backend": {
+    "webAppUrl": "https://script.google.com/macros/s/AKfycbxs5m-v5PQt2LZHO9T-OEckMim_jVDtvOgGeQJzR_bQ34FhbHvMFWssi1GQnBnWosXM/exec",
+    "libraryUrl": "https://script.google.com/macros/library/d/1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD/1",
+    "sourceFile": "backend/LiteraryFriend_Backend.gs",
+    "sha256": "aa7b81d7f0eeeebd95e296026eec8065e87697e3d0c1faa7586c5745b0732a10",
+    "modifiedByMerge": false,
+    "dispatchActionsSurfaced": 85
+  },
+  "brand": {
+    "brandFont": "Updock via Google Fonts",
+    "fontScope": "Only literal displayed LiteraryFriend wordmarks",
+    "fontBinaryBundled": false,
+    "palette": "cyan-centered lime-green/cyan/Dodger-blue"
+  },
+  "starterWorks": [
+    "Freedom Changes Everything",
+    "The Farmer's Plea"
+  ],
+  "packaging": {
+    "minimumArchiveKBRequested": 52000,
+    "compressionLevelPlanned": 1,
+    "note": "Meaningful code/data/assets retained; no filler or nested source-package dumps."
+  },
+  "inventoryNote": "File hashes exclude docs/MANIFEST.json itself to avoid self-referential hashing.",
+  "files": [
+    {
+      "path": "assets/audio/page-flip.wav",
+      "bytes": 63548,
+      "sha256": "a95c31cfd047a62d5138c1c41cd99bc8a53b0a5f8f866ea69202afcc977f347d"
+    },
+    {
+      "path": "assets/images/art-studio-icon-180.png",
+      "bytes": 9808,
+      "sha256": "fd0445655c92ff34941c9156fab0446d7e03fd6b551a87415e42e60aa389276d"
+    },
+    {
+      "path": "assets/images/art-studio-icon-192.png",
+      "bytes": 10842,
+      "sha256": "c16f0580b00cf6d608238343a098da00cfd551dd9018318a61e7c4d8602bd566"
+    },
+    {
+      "path": "assets/images/art-studio-icon-512.png",
+      "bytes": 57526,
+      "sha256": "0f1d8e0da6a70caeed4cee468de7d4141f499cf8bc25e11c28dc58c80803bda8"
+    },
+    {
+      "path": "assets/images/art-studio-icon-source.png",
+      "bytes": 2312991,
+      "sha256": "fada68c8a310b597ce86f2a68d65692627593ba81dfd574143a3ac55fdfb1174"
+    },
+    {
+      "path": "assets/images/icon-1024.png",
+      "bytes": 288339,
+      "sha256": "59e1e5e05ea4f93f7664ac12fcc67f655b92e786049397dfb0bc4576ff4d3242"
+    },
+    {
+      "path": "assets/images/icon-128.png",
+      "bytes": 7381,
+      "sha256": "c32f371a41070988a56add9404a57205c7c4e870b9491808bc801deccf6f09d9"
+    },
+    {
+      "path": "assets/images/icon-180.png",
+      "bytes": 13041,
+      "sha256": "7362021b11ecf0655673460d751bf1caf7d089ff7ac20f22257760273304457d"
+    },
+    {
+      "path": "assets/images/icon-192.png",
+      "bytes": 14568,
+      "sha256": "e00881e04167c9250c228826394122ac4eca1d54b40636a7fe5238c866f78c7b"
+    },
+    {
+      "path": "assets/images/icon-256.png",
+      "bytes": 24072,
+      "sha256": "2549be221fcf763e6f8e4482d3963bfdc417eb596b89ebadbce5aba7c6716f50"
+    },
+    {
+      "path": "assets/images/icon-32.png",
+      "bytes": 890,
+      "sha256": "a19adb009ae2d897fae7ecbdac303a7762f0f46040b83d4764d4ad257665aef3"
+    },
+    {
+      "path": "assets/images/icon-384.png",
+      "bytes": 49416,
+      "sha256": "d7b6271d093ae9157f759861903cbe565091a0830e65711f612eff6f2cb1e92b"
+    },
+    {
+      "path": "assets/images/icon-48.png",
+      "bytes": 1588,
+      "sha256": "7c50e899385bea40e6aa81faf956c253e0248bce6341ffd70ced4d5fba07ac7e"
+    },
+    {
+      "path": "assets/images/icon-512.png",
+      "bytes": 81416,
+      "sha256": "372a12a6701278de3d2a5178b8ecb442169e7103a3f8a1c69d80419ff3fa8fc5"
+    },
+    {
+      "path": "assets/images/icon-64.png",
+      "bytes": 2433,
+      "sha256": "b218ad822ffae91184a9226eeae43fdbd84094d9bbd6812f792b42450c2a8aba"
+    },
+    {
+      "path": "assets/images/icon-768.png",
+      "bytes": 167827,
+      "sha256": "cf6c59c7c6e1f62d3d5306bffe17e7d06ed85bf9fa95e313579424fbc9870d39"
+    },
+    {
+      "path": "assets/images/literaryfriend-icon.png",
+      "bytes": 2342033,
+      "sha256": "0fbf4c9fa50a97bc4e28a59af0ca7c7ee02a849cbfecbcefd20c6753be3e9cdd"
+    },
+    {
+      "path": "assets/images/paper-cream-fiber.jpg",
+      "bytes": 892415,
+      "sha256": "4ab2896f987005019d5acb6451cd3894d6dd512780c281460b5c8d4b34a61655"
+    },
+    {
+      "path": "assets/images/paper-linen.jpg",
+      "bytes": 971506,
+      "sha256": "79459633c19abfd74486d591586cd41817c850cc5f698dce5259cecc241adcc4"
+    },
+    {
+      "path": "assets/images/paper-parchment.jpg",
+      "bytes": 1146883,
+      "sha256": "0ec570437a653baabd1a23108038867b3b4e4f9ffd4b977c95fe026a9f483737"
+    },
+    {
+      "path": "backend/BACKEND_LINKS.txt",
+      "bytes": 424,
+      "sha256": "244bebeb7962f1b59db5b442ef5554e157229513b6f1a9989ee3c8712801a682"
+    },
+    {
+      "path": "backend/LiteraryFriend_Backend.gs",
+      "bytes": 114527,
+      "sha256": "aa7b81d7f0eeeebd95e296026eec8065e87697e3d0c1faa7586c5745b0732a10"
+    },
+    {
+      "path": "css/accessibility.css",
+      "bytes": 1542,
+      "sha256": "61099fc75e81ce9901fab3dd90aa02a334ccf02841341d3c9d154234f814d84e"
+    },
+    {
+      "path": "css/app.css",
+      "bytes": 30010,
+      "sha256": "c663c0dd4c9f7bffa9b79bd61ccd4d24a91f001c4a461d4e465b74434123d620"
+    },
+    {
+      "path": "css/art-studio-retro.css",
+      "bytes": 497,
+      "sha256": "ecf69bfb82833fb340f78f252de9e6fcc2a7c93cf8571d87d42854e08a433b7a"
+    },
+    {
+      "path": "css/art-studio-styles.css",
+      "bytes": 2716,
+      "sha256": "a66a8f5d009a0b3b084745a5ec4dec91ee07dded37d5a28b0bdc9b2dee42296c"
+    },
+    {
+      "path": "css/art-studio-workspace.css",
+      "bytes": 9393,
+      "sha256": "ec6774d28ec3120025189b5ee399cdbdcc978b9cc1eeabe84d573ea6bae2ca3f"
+    },
+    {
+      "path": "css/book-studio.css",
+      "bytes": 33464,
+      "sha256": "b580d27c595ef67d44fd4cb4f9f028ec179ad62dd8266d29f21576775bac0b44"
+    },
+    {
+      "path": "css/merged.css",
+      "bytes": 4863,
+      "sha256": "210b4f89dab84ba818cbbcebcb7a1651317183d405eb6ab805f2deff685165e4"
+    },
+    {
+      "path": "css/print.css",
+      "bytes": 1013,
+      "sha256": "72e07aac8ae095bc5e0a40e44329ee022459748cc3e88674cbfd224e6f2d89ff"
+    },
+    {
+      "path": "docs/AUDIT.md",
+      "bytes": 2519,
+      "sha256": "0f2ecb0d5b06301e09a4b31bbbe957c4f7915bbbb1589bf6fe2f39e17c588098"
+    },
+    {
+      "path": "docs/BACKEND_CAPABILITIES.md",
+      "bytes": 2413,
+      "sha256": "b9f2913031a622e0076f266be9f38b9edc0adba4011d229bb56d1bff2399cb69"
+    },
+    {
+      "path": "docs/BUILD_REPORT.txt",
+      "bytes": 1623,
+      "sha256": "4897b2fb0050f2a81e71215c2f95cc8cb6ad7d9aadec61c13cdf4d4be0d9ab9c"
+    },
+    {
+      "path": "docs/LICENSE.md",
+      "bytes": 4709,
+      "sha256": "39fb037e600bb572290736294fe82253fbe2e6745aacd0151322e8e6417c6a3b"
+    },
+    {
+      "path": "docs/PAGE_FLIP_RESEARCH.md",
+      "bytes": 1431,
+      "sha256": "10885e8f19369fc5938e7c9fa54b419cfb880ad0cbda054bbf72a33ac79a58ee"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 5143,
+      "sha256": "e7dceb5c855d431f0ff054bf47b8d816c947873eb910095bd92941c2b80c0288"
+    },
+    {
+      "path": "docs/SOURCE_MAP.md",
+      "bytes": 2418,
+      "sha256": "ba07a8a5c4dffc15ecff48f4c0a8bc057f347c7f36b4706fd8bb54ec1a6db813"
+    },
+    {
+      "path": "index.html",
+      "bytes": 7213,
+      "sha256": "b43446ac1a4465a0f08e6e1683e28ccbbf91e6dab4f091f8a748e95f68ddfb02"
+    },
+    {
+      "path": "js/accessibility.js",
+      "bytes": 2909,
+      "sha256": "25456fd2bc58ce86b4be3ed4234d8f585d5f7db6e1c4f2c47410fa9a48b6db20"
+    },
+    {
+      "path": "js/api.js",
+      "bytes": 7670,
+      "sha256": "d778aef631a0aee01ec0f7c1e741249ad45f70f57d77e6228e76b77e6d2e6b05"
+    },
+    {
+      "path": "js/app.js",
+      "bytes": 94033,
+      "sha256": "df26e8024855c166be67cc129a64c91b0d95a46e6c6e4d0f5e1fe7c7e56a13ea"
+    },
+    {
+      "path": "js/art-studio-app.js",
+      "bytes": 38924,
+      "sha256": "6f6755d19a7b0f4c418022f28e0a5e8ac9cda402c0f018480444399b015c126e"
+    },
+    {
+      "path": "js/art-studio-backend.js",
+      "bytes": 5651,
+      "sha256": "c3dca038b8a4cdce24e16d329b68efe919acabd472844ef13138859f25a30307"
+    },
+    {
+      "path": "js/art-studio-config.js",
+      "bytes": 7214,
+      "sha256": "02ed2b7b34e1af4162de3d0760f8cda5bee09b3a6723f34bb39e5593c36a9c3c"
+    },
+    {
+      "path": "js/art-studio-editor.js",
+      "bytes": 8523,
+      "sha256": "31160f261fd1459dcc112142de2e38aab42d52c774a576f5e2ae6435208fadc3"
+    },
+    {
+      "path": "js/art-studio-embed.js",
+      "bytes": 27283,
+      "sha256": "e58566a9187c1f9575eb1a25eae8d2a2b5671dae8f4c69bb6494635691f7f782"
+    },
+    {
+      "path": "js/art-studio-model.js",
+      "bytes": 2350,
+      "sha256": "c636a07d56a0589f6af4763534567c2fc9290ae12db0208d2d4505f61de65ef6"
+    },
+    {
+      "path": "js/art-studio-render.js",
+      "bytes": 13401,
+      "sha256": "6c3efcfd4b7dc9274161c6a3a74633356d5dcc7ec553f09a16e7213797cab9d3"
+    },
+    {
+      "path": "js/art-studio-storage.js",
+      "bytes": 1676,
+      "sha256": "7185b98a364d21d4c4c981e5834c68f8985a8198138840bea6dad24cb0fcf3c9"
+    },
+    {
+      "path": "js/assistant.js",
+      "bytes": 8287,
+      "sha256": "fc758153e5fbf7b01549410e49ae72f35748b9d073ba9c4f9912fbf0d33293bd"
+    },
+    {
+      "path": "js/backend-console.js",
+      "bytes": 17803,
+      "sha256": "b4873263c286a3376faf97b07dd72e8679fb555a33c9becca333ff9743ced6dd"
+    },
+    {
+      "path": "js/book-studio.js",
+      "bytes": 116191,
+      "sha256": "bf47cf0631a19604de7b7b92ce2af0943a4514d3714d109cf815404d8be32d71"
+    },
+    {
+      "path": "js/core.js",
+      "bytes": 8725,
+      "sha256": "97291ddd5d8f282bd3850410303915985bbfadab62e6db2b7f6661402be2f1ae"
+    },
+    {
+      "path": "js/docs-content.js",
+      "bytes": 17617,
+      "sha256": "be02d5dd8d0168e2dd64b0d93a2109ff9331295c9606ffd4676400ea57c0f5ff"
+    },
+    {
+      "path": "js/editor.js",
+      "bytes": 22442,
+      "sha256": "9b9b5c4743e723a7824d159596c418e050e1e9d3491dc03601ad82f675abc04c"
+    },
+    {
+      "path": "js/literary-corpus-index.js",
+      "bytes": 15604149,
+      "sha256": "62a6c1795e2f0c7e2e62b96a5e8f5738df0f3120da9cdf1e7177d1787f90be7e"
+    },
+    {
+      "path": "js/literary-corpus-part-1.js",
+      "bytes": 12058712,
+      "sha256": "639d8857b3f3374031e9fa57ce3ed4c43be93e6435532c552eda999dcf2f42fe"
+    },
+    {
+      "path": "js/literary-corpus-part-2.js",
+      "bytes": 12064767,
+      "sha256": "2149f2e366883701fbe4e502ad3452e5bcbb31a124f085698dca674da0b09173"
+    },
+    {
+      "path": "js/literary-corpus-part-3.js",
+      "bytes": 12060213,
+      "sha256": "be7c581d5a756091690759a8bdb3e2c076258becebcb97ff387708fd414fce7e"
+    },
+    {
+      "path": "js/literary-corpus-part-4.js",
+      "bytes": 12129968,
+      "sha256": "07a951c4110ca718d061db4f9a50be089f24ba04fb5adf6c72a1e7a7658e0559"
+    },
+    {
+      "path": "js/security.js",
+      "bytes": 1387,
+      "sha256": "93452a30f393d894c51698d33382446c3cc65bcfd458068e47195fdd72ae563f"
+    },
+    {
+      "path": "js/specialist-corpus-part-1.js",
+      "bytes": 15498636,
+      "sha256": "15e4cafa936e1faf586cb777650f343ff8660379172bc91fd29daddb28c5cf28"
+    },
+    {
+      "path": "js/specialist-corpus-part-2.js",
+      "bytes": 15499298,
+      "sha256": "d0f0657e862118a66cc0c2e73f52362fb49377e3cee4ad689eff35bece9f9047"
+    },
+    {
+      "path": "js/specialist-corpus-part-3.js",
+      "bytes": 15499239,
+      "sha256": "9e8e830dade295b0640c91cd9bf4b1b5ccbe75963aae957597148e9043beddfb"
+    },
+    {
+      "path": "js/specialist-corpus-part-4.js",
+      "bytes": 2217332,
+      "sha256": "3c739d83ecca56deeb9a131a1c4bb8ee95c76ada3d170827b0e43981e13b0e58"
+    },
+    {
+      "path": "js/storage.js",
+      "bytes": 7668,
+      "sha256": "1c25073eae46d4bed97640a70c0b8700343d395b2f69f45db063e2f1695f86cb"
+    },
+    {
+      "path": "js/templates-data.js",
+      "bytes": 10256,
+      "sha256": "b905593fa255816854e308979be5ab307418795bf6bb82e39bdb1938fefce57a"
+    },
+    {
+      "path": "js/workflow-corpus-part-1.js",
+      "bytes": 16380865,
+      "sha256": "e81adfc49374f4c2a0581e73b2c4ee85c0aff5e7d1df04368befb1dec608bb83"
+    },
+    {
+      "path": "js/workflow-corpus-part-2.js",
+      "bytes": 16385206,
+      "sha256": "6dee724930da71fa558aea79f8d53a448c43145f1b82d9f377950797c2825dc8"
+    },
+    {
+      "path": "js/workflow-corpus-part-3.js",
+      "bytes": 16391660,
+      "sha256": "d254e9af080d06ae010cae5805286a559db5f01722fc9b40824b151ec55c2dc0"
+    },
+    {
+      "path": "js/writer-tools.js",
+      "bytes": 11869,
+      "sha256": "99c001a8597e38fba99ecbdd5ebe3acd174fbd2d4da33d9f35cc7274c08e0f43"
+    },
+    {
+      "path": "json/art-studio-backend-config.json",
+      "bytes": 633,
+      "sha256": "a26ec717b57d3dd72ed3bf920e9c739ca1f12947c240ae95250a294a9127bb82"
+    },
+    {
+      "path": "json/art-studio-genre-presets.json",
+      "bytes": 1876,
+      "sha256": "0ab3256ab32b625d106d4f71e7c2c320265429ab3904e7cbd0e3c6773f09b916"
+    },
+    {
+      "path": "json/art-studio-page-sizes.json",
+      "bytes": 2205,
+      "sha256": "8102db0cec4d21ca835cf8f3903fdf43f4582e42fd09963ec1a6c22440ba827f"
+    },
+    {
+      "path": "json/art-studio-project-schema.json",
+      "bytes": 516,
+      "sha256": "3a9db2b4b56a577476467542a596b034e8f6b621dedc1c7bec415e953007279f"
+    },
+    {
+      "path": "json/art-studio-texture-presets.json",
+      "bytes": 760,
+      "sha256": "0594794fe120d70fbb9826ea9ff863a8329404c56dd01918f98de6d746e08ff9"
+    },
+    {
+      "path": "json/backend-config.json",
+      "bytes": 578,
+      "sha256": "d2ca6f85911c4f2609c41823d967bc497dce6e7bad50c81b3255a52570c586bc"
+    },
+    {
+      "path": "json/favorite-short-stories.json",
+      "bytes": 26713,
+      "sha256": "bfd0ac7ae14734da559c6a030cf2312a8a5a3a55434fc6bf77f9c0ccad267c68"
+    },
+    {
+      "path": "json/page-example.json",
+      "bytes": 602,
+      "sha256": "e44aff92429bdbb1a4f49a963e158c4f7eed5021fdbfdeb1cb0dca73966d020f"
+    },
+    {
+      "path": "json/page-schema.json",
+      "bytes": 1283,
+      "sha256": "1c837fb772e4069a6ad1c6d4f0413caaeac1a650ff5ab17d4b8b7512fce39d07"
+    },
+    {
+      "path": "json/size-presets.json",
+      "bytes": 2031,
+      "sha256": "1db6f5731b707a30dfae955577c26e8321015d82b3e59c0cedb9185534492717"
+    },
+    {
+      "path": "json/templates.json",
+      "bytes": 13819,
+      "sha256": "3c52d5e68e4fd9eeb0e144b02aa514c18b93918120f70db92309a89f8ed386de"
+    }
+  ]
+}
