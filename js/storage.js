@@ -59,11 +59,8 @@
     }
     async seed(){
       const seeded=await this.metaGet('seeded',false); if(seeded)return;
-      const project=await this.put({type:'project',id:LF.uid('project'),title:'My Writing Desk',projectType:'novel',description:'A flexible space for drafts, notes, research, and story planning.',status:'active',wordGoal:80000});
-      const welcome=await this.put({type:'document',projectId:project.id,docType:'note',title:'Welcome to LiteraryFriend',content:`<h1>Welcome to LiteraryFriend</h1><p>This workspace is built for writers first. Capture a thought, draft a scene, plan a novel, build a character, keep research beside the manuscript, or use the revision and continuity tools to interrogate a draft.</p><h2>Try these first</h2><ul><li>Create a project from <strong>Projects</strong>.</li><li>Use <strong>Manuscript</strong> for chapters and scenes.</li><li>Keep fast ideas in <strong>Notes &amp; Journal</strong>.</li><li>Open <strong>Literary Assistant</strong> to search the local writing and research corpus.</li></ul>`,tags:['welcome'],pinned:true,sortOrder:0});
-      await this.put({type:'note',projectId:project.id,noteType:'journal',title:`Writer's Log — ${new Date().toLocaleDateString()}`,content:'<p>What are you writing today?</p>',tags:['journal','writing-log'],pinned:false});
-      await this.put({type:'entity',projectId:project.id,entityType:'character',name:'Example Character',description:'Replace this example with one of your own characters.',attributes:{role:'Protagonist',want:'',need:'',voice:'',arc:''},tags:['example']});
-      await this.metaSet('activeProjectId',project.id); await this.metaSet('seeded',true); LF.events.emit('store:seeded',{project,welcome});
+      await this.metaSet('seeded',true);
+      LF.events.emit('store:seeded',{empty:true});
     }
   }
 

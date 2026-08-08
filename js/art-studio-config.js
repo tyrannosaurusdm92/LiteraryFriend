@@ -2,25 +2,27 @@
   'use strict';
   const LF = global.LFArt = global.LFArt || {};
 
-  LF.VERSION = '1';
+  LF.VERSION = '1.0.0';
   LF.CONFIG = Object.freeze({
     appName: 'LiteraryFriend Art Studio',
     storageDb: 'literaryfriend.artstudio.v1',
     storageVersion: 1,
     settingsKey: 'literaryfriend.artstudio.settings.v1',
     backendKey: 'literaryfriend.artstudio.backend.v1',
-    backendUrl: 'https://script.google.com/macros/s/AKfycbxs5m-v5PQt2LZHO9T-OEckMim_jVDtvOgGeQJzR_bQ34FhbHvMFWssi1GQnBnWosXM/exec',
-    backendLibrary: 'https://script.google.com/macros/library/d/1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD/1',
-    projectId: 'literaryfriend-art-studio',
+    backendUrl: 'https://script.google.com/macros/s/AKfycbw0lsf6upSeg1h_PD6cIyxLt1ukOfU71vRKuz3xc7-PlDbzKHFfvm4NR0c5eD1RoNNK/exec',
+    backendLibrary: 'https://script.google.com/macros/library/d/1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD/2',
+    projectId: 'literaryfriend-book-studio',
     defaultDpi: 300,
     maxCanvasPixels: 18000000,
     maxHistory: 24,
     imageRequestTimeoutMs: 180000,
     chatRequestTimeoutMs: 120000,
     healthRequestTimeoutMs: 20000,
-    pageSizesUrl: 'json/art-studio-page-sizes.json',
-    genrePresetsUrl: 'json/art-studio-genre-presets.json',
-    texturePresetsUrl: 'json/art-studio-texture-presets.json'
+    pageSizesUrl: 'json/page-sizes.json',
+    genrePresetsUrl: 'json/genre-presets.json',
+    texturePresetsUrl: 'json/texture-presets.json',
+    brushPresetsUrl: 'json/effects-brush-presets.json',
+    colorPalettesUrl: 'json/effects-color-palettes.json'
   });
 
   LF.FALLBACK_PAGE_SIZES = [

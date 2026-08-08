@@ -3,8 +3,6 @@
 
   let mountRoot = null;
 
-  const API_URL = 'https://script.google.com/macros/s/AKfycbxs5m-v5PQt2LZHO9T-OEckMim_jVDtvOgGeQJzR_bQ34FhbHvMFWssi1GQnBnWosXM/exec';
-  const LIBRARY_URL = 'https://script.google.com/macros/library/d/1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD/1';
   const APP_SCHEMA = 'literaryfriend.interactive-book.v1';
   const PAGE_SCHEMA = 'literaryfriend.interactive-book.page.v1';
   const DB_NAME = 'literaryfriend-book-builder-v1';
@@ -94,7 +92,7 @@
         state = normalizeProject(saved);
         setStatus('Restored your last local book draft.');
       } else {
-        setStatus('Ready. Start a blank book or load the favorite short-stories starter.');
+        setStatus('Book Builder ready.');
       }
     } catch (error) {
       console.warn('Local restore failed', error);
@@ -1356,89 +1354,26 @@
   }
 
   function bindCloudControls() {
-    els.backendHealthBtn.addEventListener('click', checkBackendHealth);
-    els.cloudLoginBtn.addEventListener('click', cloudLogin);
-    els.cloudRegisterBtn.addEventListener('click', cloudRegister);
+    els.cloudRefreshBtn?.addEventListener('click', refreshCloudAccount);
+    els.cloudOpenAccountBtn?.addEventListener('click', () => global.LF?.app?.navigate?.('cloud'));
     els.cloudListBtn.addEventListener('click', listCloudBooks);
     els.cloudSaveBtn.addEventListener('click', saveBookToCloud);
     els.cloudLoadBtn.addEventListener('click', loadSelectedCloudBook);
     els.cloudProjectSelect.addEventListener('change', () => {
       els.cloudLoadBtn.disabled = !els.cloudProjectSelect.value;
     });
-    els.cloudPasswordInput.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') cloudLogin();
-    });
   }
 
-  async function checkBackendHealth() {
-    setBackendStatus('Checking backend…');
-    try {
-      let result;
-      try {
-        const response = await fetch(`${API_URL}?action=health&_=${Date.now()}`, { method: 'GET', redirect: 'follow' });
-        result = await response.json();
-      } catch (_) {
-        result = await apiPost('health', {}, '');
-      }
-      setBackendStatus(result.ok === false ? 'Backend replied with an error' : 'Backend online', result.ok === false);
-      setStatus(`LiteraryFriend backend is reachable. Library reference: ${LIBRARY_URL}`);
-    } catch (error) {
-      setBackendStatus('Backend unavailable', true);
-      setStatus(`Backend check failed: ${error.message}`, true);
-    }
-  }
-
-  async function cloudLogin() {
-    const login = els.cloudLoginInput.value.trim();
-    const password = els.cloudPasswordInput.value;
-    if (!login || !password) {
-      setStatus('Enter your LiteraryFriend email/username and password first.', true);
-      return;
-    }
-    try {
-      setStatus('Signing in to LiteraryFriend…');
-      const result = await apiPost('auth.login', { login, email: login, password }, '');
-      acceptCloudAuth(result);
-      setStatus('Signed in. You can now save and load interactive books from the supplied LiteraryFriend backend.');
-      await listCloudBooks();
-    } catch (error) {
-      setStatus(`Sign-in failed: ${error.message}`, true);
-    }
-  }
-
-  async function cloudRegister() {
-    const email = els.cloudLoginInput.value.trim();
-    const password = els.cloudPasswordInput.value;
-    if (!/^\S+@\S+\.\S+$/.test(email)) {
-      setStatus('Registration requires an email address in the login field.', true);
-      return;
-    }
-    if (password.length < 10) {
-      setStatus('The LiteraryFriend backend requires a password of at least 10 characters.', true);
-      return;
-    }
-    const stem = (email.split('@')[0] || 'reader').toLowerCase().replace(/[^a-z0-9._-]/g, '').slice(0, 28) || 'reader';
-    const username = `${stem}${String(Date.now()).slice(-4)}`;
-    try {
-      setStatus('Creating LiteraryFriend account…');
-      const result = await apiPost('auth.register', { email, username, password, displayName: stem }, '');
-      acceptCloudAuth(result);
-      setStatus(`Account created as ${username}. Your browser has stored the returned session token for this tab.`);
-      await listCloudBooks();
-    } catch (error) {
-      setStatus(`Registration failed: ${error.message}`, true);
-    }
-  }
-
-  function acceptCloudAuth(result) {
-    const token = result.token || result.data?.token || result.session?.token || '';
-    const user = result.user || result.data?.user || null;
-    if (!token) throw new Error('Backend did not return a session token.');
-    cloudToken = token;
-    cloudUser = user;
-    localStorage.setItem(TOKEN_KEY, cloudToken); if (global.LF?.api) { global.LF.api.token = cloudToken; global.LF.api.user = cloudUser; global.LF.api.saveAuth?.(); }
+  async function refreshCloudAccount() {
+    cloudToken = global.LF?.api?.token || localStorage.getItem(TOKEN_KEY) || '';
+    cloudUser = global.LF?.api?.user || cloudUser;
     updateCloudUserLabel();
-    setBackendStatus('Signed in');
+    if (!cloudToken) {
+      setAccountStatus('Not signed in', true);
+      setStatus('Sign in from LiteraryFriend Account to use account storage.', true);
+      return;
+    }
+    await verifyCloudSession();
   }
 
   async function verifyCloudSession() {
@@ -1446,13 +1381,13 @@
       const result = await apiPost('auth.me', {}, cloudToken);
       cloudUser = result.user || result.data?.user || result.data || null;
       updateCloudUserLabel();
-      setBackendStatus('Signed in');
+      setAccountStatus('Account connected');
       await listCloudBooks(false);
     } catch (error) {
       console.warn('Stored cloud session rejected', error);
       cloudToken = '';
       cloudUser = null;
-      localStorage.removeItem(TOKEN_KEY); if (global.LF?.api) { global.LF.api.token = ''; global.LF.api.user = null; global.LF.api.saveAuth?.(); }
+      localStorage.removeItem(TOKEN_KEY);
       updateCloudUserLabel();
     }
   }
@@ -1468,7 +1403,7 @@
   async function listCloudBooks(report = true) {
     if (!requireCloudToken()) return;
     try {
-      if (report) setStatus('Loading cloud book list…');
+      if (report) setStatus('Loading saved book list…');
       const result = await apiPost('projects.list', { type: 'book' }, cloudToken);
       const projects = result.projects || result.data?.projects || result.data || [];
       const list = Array.isArray(projects) ? projects : [];
@@ -1481,7 +1416,7 @@
         els.cloudProjectSelect.value = state.cloud.projectId;
       }
       els.cloudLoadBtn.disabled = !els.cloudProjectSelect.value;
-      if (report) setStatus(`Found ${list.length} cloud project${list.length === 1 ? '' : 's'}.`);
+      if (report) setStatus(`Found ${list.length} saved project${list.length === 1 ? '' : 's'}.`);
     } catch (error) {
       setStatus(`Could not list cloud books: ${error.message}`, true);
     }
@@ -1502,7 +1437,7 @@
         }, cloudToken);
         const project = created.project || created.data?.project || created.data || {};
         projectId = project.id || project.projectId;
-        if (!projectId) throw new Error('Backend created the project but did not return a project ID.');
+        if (!projectId) throw new Error('Account storage could not finish preparing the project.');
         state.cloud.projectId = projectId;
       } else {
         await apiPost('projects.update', {
@@ -1539,7 +1474,7 @@
         const result = await apiPost('nodes.save', payload, cloudToken);
         const node = result.node || result.data?.node || result.data || {};
         const id = node.id || node.nodeId || result.id;
-        if (!id) throw new Error(`Backend did not return a node ID for page chunk ${i + 1}.`);
+        if (!id) throw new Error(`Account storage did not return an item ID for page chunk ${i + 1}.`);
         newIds.push(id);
       }
 
@@ -1553,7 +1488,7 @@
       manifest.cloud = { ...state.cloud, projectId, pageNodeIds: newIds };
       const manifestText = JSON.stringify(manifest);
       if (manifestText.length > MAX_CLOUD_NODE_TEXT) {
-        throw new Error('The cover/texture metadata is too large for one backend node. Replace it with smaller images and try again.');
+        throw new Error('The cover/texture metadata is too large for one account-storage item. Replace it with smaller images and try again.');
       }
       const manifestPayload = {
         projectId,
@@ -1577,7 +1512,7 @@
       setStatus(`Saved ${state.pages.length} page${state.pages.length === 1 ? '' : 's'} to LiteraryFriend cloud in ${chunks.length} page chunk${chunks.length === 1 ? '' : 's'}.`);
     } catch (error) {
       console.error(error);
-      setStatus(`Cloud save failed: ${error.message}`, true);
+      setStatus(`Account save failed: ${error.message}`, true);
     }
   }
 
@@ -1588,7 +1523,7 @@
     pages.forEach((page, index) => {
       const text = JSON.stringify(page);
       if (text.length > TARGET_CHUNK_TEXT) {
-        throw new Error(`Page ${index + 1} (${page.title || 'Untitled'}) is too large for the backend node limit. Split its content across pages.`);
+        throw new Error(`Page ${index + 1} (${page.title || 'Untitled'}) is too large for one account-storage item. Split its content across pages.`);
       }
       if (current.length && currentSize + text.length + 2 > TARGET_CHUNK_TEXT) {
         chunks.push(current);
@@ -1668,7 +1603,7 @@
       setStatus(`Loaded “${state.title}” with ${state.pages.length} page${state.pages.length === 1 ? '' : 's'} from LiteraryFriend cloud.`);
     } catch (error) {
       console.error(error);
-      setStatus(`Cloud load failed: ${error.message}`, true);
+      setStatus(`Account load failed: ${error.message}`, true);
     }
   }
 
@@ -1681,31 +1616,22 @@
   }
 
   function requireCloudToken() {
+    cloudToken = cloudToken || global.LF?.api?.token || localStorage.getItem(TOKEN_KEY) || '';
     if (cloudToken) return true;
-    setStatus('Sign in to the supplied LiteraryFriend backend first.', true);
+    setStatus('Sign in from LiteraryFriend Account first.', true);
     return false;
   }
 
   async function apiPost(action, data, token = cloudToken) {
-    const response = await fetch(API_URL, {
-      method: 'POST',
-      redirect: 'follow',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify({ action, token: token || '', data: data || {} })
-    });
-    const text = await response.text();
-    let result;
-    try { result = JSON.parse(text); } catch (_) { throw new Error(`Backend returned non-JSON (HTTP ${response.status}).`); }
-    if (!response.ok || result.ok === false) {
-      throw new Error(result.error?.message || result.message || result.error || `Backend request failed (HTTP ${response.status}).`);
-    }
-    return result;
+    if (!global.LF?.api?.request) throw new Error('Account storage is unavailable in this session.');
+    return global.LF.api.request(action, data || {}, { token: token || '' });
   }
 
-  function setBackendStatus(message, isError = false) {
-    els.backendStatus.textContent = message;
-    els.backendStatus.classList.toggle('error', Boolean(isError));
-    els.backendStatus.classList.toggle('ok', !isError && /online|signed/i.test(message));
+  function setAccountStatus(message, isError = false) {
+    if (!els.cloudStatus) return;
+    els.cloudStatus.textContent = message;
+    els.cloudStatus.classList.toggle('error', Boolean(isError));
+    els.cloudStatus.classList.toggle('ok', !isError && /connected|signed/i.test(message));
   }
 
   function setStatus(message, isError = false) {
@@ -1760,7 +1686,7 @@
   function humanizeKey(key) { return String(key).replace(/[_-]+/g, ' ').replace(/([a-z0-9])([A-Z])/g, '$1 $2').replace(/^./, (m) => m.toUpperCase()); }
 
   global.LFBookStudio = {
-    template: "<section class=\"book-studio-feature\" aria-label=\"LiteraryFriend Book Builder\">\n  <div class=\"book-app-shell\">\n    <header class=\"book-topbar\">\n      <div class=\"book-feature-title\">\n        <img src=\"assets/images/literaryfriend-icon.png\" alt=\"\" class=\"app-icon\">\n        <div><strong>Book Builder</strong><span>Create, design, preview, and export page-flipping books inside LiteraryFriend.</span></div>\n      </div>\n      <div class=\"top-actions\">\n        <span class=\"autosave-state\" id=\"autosaveState\" aria-live=\"polite\">Local draft ready</span>\n        <button class=\"ui-button\" id=\"saveLocalBtn\" type=\"button\">Save Local</button>\n        <button class=\"ui-button\" id=\"exportProjectBtn\" type=\"button\">Export Project JSON</button>\n        <button class=\"ui-button primary\" id=\"readerModeBtn\" type=\"button\" aria-pressed=\"false\">Reader Mode</button>\n      </div>\n    </header>\n    <div class=\"book-workspace\">\n<aside aria-label=\"Book controls\" class=\"control-panel\" id=\"controlPanel\">\n<nav aria-label=\"Editor sections\" class=\"panel-tabs\">\n<button class=\"panel-tab active\" data-panel=\"bookPanel\" type=\"button\">Book</button>\n<button class=\"panel-tab\" data-panel=\"coverPanel\" type=\"button\">Cover</button>\n<button class=\"panel-tab\" data-panel=\"pagesPanel\" type=\"button\">Pages</button>\n<button class=\"panel-tab\" data-panel=\"designPanel\" type=\"button\">Paper</button>\n<button class=\"panel-tab\" data-panel=\"cloudPanel\" type=\"button\">Cloud</button>\n</nav>\n<section class=\"panel-page active\" id=\"bookPanel\">\n<div class=\"panel-heading\">\n<h2>Book Setup</h2>\n<p>Title, trim size, and project import.</p>\n</div>\n<label class=\"field\">Book title\n            <input autocomplete=\"off\" id=\"bookTitleInput\" maxlength=\"180\" type=\"text\"/>\n</label>\n<label class=\"field\">Subtitle\n            <input autocomplete=\"off\" id=\"bookSubtitleInput\" maxlength=\"240\" type=\"text\"/>\n</label>\n<label class=\"field\">Author / creator\n            <input autocomplete=\"off\" id=\"bookAuthorInput\" maxlength=\"160\" type=\"text\"/>\n</label>\n<label class=\"field\">Book size\n            <select id=\"sizePresetSelect\"></select>\n</label>\n<div class=\"two-col\">\n<label class=\"field\">Width (in)\n              <input id=\"customWidthInput\" max=\"20\" min=\"2\" step=\"0.01\" type=\"number\"/>\n</label>\n<label class=\"field\">Height (in)\n              <input id=\"customHeightInput\" max=\"20\" min=\"2\" step=\"0.01\" type=\"number\"/>\n</label>\n</div>\n<div class=\"size-readout\" id=\"sizeReadout\"></div>\n<div class=\"button-stack\">\n<button class=\"ui-button primary\" id=\"newBookBtn\" type=\"button\">New Blank Book</button>\n<button class=\"ui-button\" id=\"loadStarterBtn\" type=\"button\">Load Favorite Short Stories</button>\n<label class=\"file-button\">Import Project JSON\n              <input accept=\".json,application/json\" id=\"projectImportInput\" type=\"file\"/>\n</label>\n</div>\n<div class=\"info-box\">\n            A small starter book made from two favorite short stories is included so the builder opens with real prose instead of old project data. Cover art remains a separate upload.\n          </div>\n</section>\n<section class=\"panel-page\" id=\"coverPanel\">\n<div class=\"panel-heading\">\n<h2>Cover Designer</h2>\n<p>Cover art is uploaded separately from page JSON.</p>\n</div>\n<label class=\"file-button primary-file\">Upload / Replace Cover Art\n            <input accept=\"image/*\" id=\"coverArtInput\" type=\"file\"/>\n</label>\n<button class=\"ui-button danger-lite\" id=\"clearCoverBtn\" type=\"button\">Clear Cover Art</button>\n<label class=\"field\">Cover preset\n            <select id=\"coverPresetSelect\">\n<option value=\"classic\">Classic</option>\n<option value=\"midnight\">Midnight</option>\n<option value=\"retro-pulp\">Retro Pulp</option>\n<option value=\"minimal\">Minimal</option>\n<option value=\"custom\">Custom</option>\n</select>\n</label>\n<label class=\"check-row\"><input id=\"coverShowTextInput\" type=\"checkbox\"/> Show title text over art</label>\n<label class=\"field\">Cover title\n            <input id=\"coverTitleInput\" maxlength=\"180\" type=\"text\"/>\n</label>\n<label class=\"field\">Cover subtitle\n            <input id=\"coverSubtitleInput\" maxlength=\"240\" type=\"text\"/>\n</label>\n<label class=\"field\">Cover author\n            <input id=\"coverAuthorInput\" maxlength=\"160\" type=\"text\"/>\n</label>\n<div class=\"two-col colors-row\">\n<label class=\"field\">Cover color\n              <input id=\"coverBgInput\" type=\"color\"/>\n</label>\n<label class=\"field\">Cover text\n              <input id=\"coverTextInput\" type=\"color\"/>\n</label>\n</div>\n<label class=\"field\">Art fit\n            <select id=\"coverFitSelect\">\n<option value=\"cover\">Fill / crop</option>\n<option value=\"contain\">Fit whole art</option>\n<option value=\"stretch\">Stretch</option>\n</select>\n</label>\n<label class=\"field\">Dark overlay <span id=\"coverOverlayValue\">18%</span>\n<input id=\"coverOverlayInput\" max=\"80\" min=\"0\" step=\"1\" type=\"range\"/>\n</label>\n</section>\n<section class=\"panel-page\" id=\"pagesPanel\">\n<div class=\"panel-heading\">\n<h2>JSON Pages</h2>\n<p>Upload individual pages or a batch of page JSON files.</p>\n</div>\n<label class=\"file-button primary-file\">Upload JSON Page(s)\n            <input accept=\".json,application/json\" id=\"pageFilesInput\" multiple=\"\" type=\"file\"/>\n</label>\n<div class=\"button-grid\">\n<button class=\"ui-button\" id=\"addBlankPageBtn\" type=\"button\">Add Blank</button>\n<button class=\"ui-button\" id=\"downloadPagesBtn\" type=\"button\">Export Pages</button>\n</div>\n<label class=\"check-row\"><input checked=\"\" id=\"naturalSortInput\" type=\"checkbox\"/> Sort imported files by filename</label>\n<div class=\"page-list-toolbar\">\n<span id=\"pageCountLabel\">0 pages</span>\n<button class=\"tiny-button\" id=\"duplicatePageBtn\" type=\"button\">Duplicate</button>\n</div>\n<div class=\"page-list\" id=\"pageList\" role=\"list\"></div>\n</section>\n<section class=\"panel-page\" id=\"designPanel\">\n<div class=\"panel-heading\">\n<h2>Paper &amp; Page Design</h2>\n<p>Global paper styling; a page JSON can override these values.</p>\n</div>\n<label class=\"field\">Paper preset\n            <select id=\"paperPresetSelect\">\n<option value=\"cream\">Book Cream</option>\n<option value=\"white\">Bright White</option>\n<option value=\"parchment\">Parchment</option>\n<option value=\"notebook\">Notebook Grid</option>\n<option value=\"night\">Night Reader</option>\n<option value=\"custom\">Custom</option>\n</select>\n</label>\n<div class=\"two-col colors-row\">\n<label class=\"field\">Paper\n              <input id=\"paperColorInput\" type=\"color\"/>\n</label>\n<label class=\"field\">Ink\n              <input id=\"inkColorInput\" type=\"color\"/>\n</label>\n</div>\n<label class=\"field\">Accent\n            <input id=\"accentColorInput\" type=\"color\"/>\n</label>\n<label class=\"field\">Pattern\n            <select id=\"paperPatternSelect\">\n<option value=\"plain\">Plain</option>\n<option value=\"paper\">Fine Paper</option>\n<option value=\"parchment\">Parchment Grain</option>\n<option value=\"linen\">Linen</option>\n<option value=\"grid\">Grid</option>\n<option value=\"dots\">Dot Grid</option>\n</select>\n</label>\n<label class=\"field\">Reading font\n            <select id=\"pageFontSelect\">\n<option value=\"serif\">Book Serif</option>\n<option value=\"sans\">Clean Sans</option>\n<option value=\"mono\">Typewriter Mono</option>\n</select>\n</label>\n<label class=\"field\">Page margin <span id=\"pageMarginValue\">8%</span>\n<input id=\"pageMarginInput\" max=\"15\" min=\"3\" step=\"0.5\" type=\"range\"/>\n</label>\n<label class=\"field\">Built-in texture\n            <select id=\"builtinTextureSelect\">\n<option value=\"none\">None</option>\n<option value=\"cream\">Cream Fiber</option>\n<option value=\"parchment\">Parchment</option>\n<option value=\"linen\">Linen</option>\n<option value=\"custom\">Custom Upload</option>\n</select>\n</label>\n<label class=\"file-button\">Upload Page Texture / Design\n            <input accept=\"image/*\" id=\"pageTextureInput\" type=\"file\"/>\n</label>\n<button class=\"ui-button danger-lite\" id=\"clearTextureBtn\" type=\"button\">Clear Page Texture</button>\n<label class=\"check-row\"><input checked=\"\" id=\"pageNumbersInput\" type=\"checkbox\"/> Show page numbers</label>\n<label class=\"check-row\"><input checked=\"\" id=\"soundEnabledInput\" type=\"checkbox\"/> Page-flip sound</label>\n<label class=\"field\">Flip sound volume <span id=\"soundVolumeValue\">55%</span>\n<input id=\"soundVolumeInput\" max=\"100\" min=\"0\" step=\"1\" type=\"range\"/>\n</label>\n</section>\n<section class=\"panel-page\" id=\"cloudPanel\">\n<div class=\"panel-heading\">\n<h2>LiteraryFriend Cloud</h2>\n<p>Optional cloud book storage through the same supplied Apps Script deployment used by LiteraryFriend.</p>\n</div>\n<div class=\"backend-chip\" id=\"backendStatus\">Backend not checked</div>\n<button class=\"ui-button\" id=\"backendHealthBtn\" type=\"button\">Check Backend</button>\n<hr class=\"panel-rule\"/>\n<label class=\"field\">Email or username\n            <input autocomplete=\"username\" id=\"cloudLoginInput\" type=\"text\"/>\n</label>\n<label class=\"field\">Password\n            <input autocomplete=\"current-password\" id=\"cloudPasswordInput\" type=\"password\"/>\n</label>\n<div class=\"button-grid\">\n<button class=\"ui-button primary\" id=\"cloudLoginBtn\" type=\"button\">Sign In</button>\n<button class=\"ui-button\" id=\"cloudRegisterBtn\" type=\"button\">Register</button>\n</div>\n<div class=\"cloud-user\" id=\"cloudUserLabel\">Not signed in</div>\n<hr class=\"panel-rule\"/>\n<div class=\"button-grid\">\n<button class=\"ui-button\" id=\"cloudListBtn\" type=\"button\">List Cloud Books</button>\n<button class=\"ui-button primary\" id=\"cloudSaveBtn\" type=\"button\">Save Book to Cloud</button>\n</div>\n<label class=\"field\">Cloud book\n            <select id=\"cloudProjectSelect\">\n<option value=\"\">No cloud project selected</option>\n</select>\n</label>\n<button class=\"ui-button\" id=\"cloudLoadBtn\" type=\"button\">Load Selected Cloud Book</button>\n<div class=\"info-box compact\">\n            Web app endpoint is preconfigured. The supplied Apps Script Library ID/version is documented in <code>json/backend-config.json</code>; browsers call the deployed web-app endpoint directly.\n          </div>\n</section>\n</aside>\n<main class=\"preview-panel\" id=\"previewPanel\">\n<div class=\"preview-toolbar\">\n<div class=\"book-meta-preview\">\n<strong id=\"previewTitle\">Untitled Book</strong>\n<span id=\"previewTrim\">6 \u00d7 9 in</span>\n</div>\n<div aria-live=\"polite\" class=\"engine-state\" id=\"engineState\">Loading page engine\u2026</div>\n</div>\n<section aria-label=\"Interactive book preview\" class=\"book-stage\" id=\"bookStage\">\n<div class=\"stage-surface\">\n<div class=\"book-host\" id=\"bookHost\">\n<div class=\"book-mount\" id=\"bookMount\"></div>\n</div>\n</div>\n</section>\n<div aria-label=\"Book navigation\" class=\"reader-controls\" role=\"group\">\n<button aria-label=\"Go to cover\" class=\"nav-button\" id=\"firstPageBtn\" type=\"button\">|\u2039</button>\n<button aria-label=\"Previous page\" class=\"nav-button\" id=\"prevPageBtn\" type=\"button\">\u2039</button>\n<div class=\"page-position\" id=\"pagePosition\">Cover</div>\n<button aria-label=\"Next page\" class=\"nav-button\" id=\"nextPageBtn\" type=\"button\">\u203a</button>\n<button aria-label=\"Go to back cover\" class=\"nav-button\" id=\"lastPageBtn\" type=\"button\">\u203a|</button>\n<button aria-label=\"Toggle page flip sound\" aria-pressed=\"true\" class=\"nav-button sound-toggle\" id=\"soundToggleBtn\" type=\"button\">\ud83d\udd0a</button>\n</div>\n<div class=\"reader-tip\">Drag a page corner, click a page edge, swipe, or use \u2190 / \u2192. Covers use a firmer hard-page turn.</div>\n</main>\n<aside aria-label=\"Current page editor\" class=\"inspector-panel\" id=\"inspectorPanel\">\n<div class=\"inspector-heading\">\n<div>\n<h2>Page Editor</h2>\n<p>Edit the selected page as JSON.</p>\n</div>\n<span class=\"selected-page-badge\" id=\"selectedPageBadge\">No page</span>\n</div>\n<label class=\"field\">Page title\n          <input id=\"pageTitleInput\" maxlength=\"200\" type=\"text\"/>\n</label>\n<label class=\"field\">Page type\n          <select id=\"pageTypeSelect\">\n<option value=\"article\">Article</option>\n<option value=\"image\">Image</option>\n<option value=\"record\">Structured Record</option>\n<option value=\"blank\">Blank</option>\n</select>\n</label>\n<label class=\"field grow-field\">Page JSON\n          <textarea aria-label=\"Current page JSON\" id=\"pageJsonEditor\" spellcheck=\"false\"></textarea>\n</label>\n<div class=\"button-grid inspector-actions\">\n<button class=\"ui-button primary\" id=\"applyPageJsonBtn\" type=\"button\">Apply JSON</button>\n<button class=\"ui-button\" id=\"downloadPageBtn\" type=\"button\">Download Page</button>\n<button class=\"ui-button danger\" id=\"deletePageBtn\" type=\"button\">Delete</button>\n</div>\n<div class=\"schema-help\">\n<strong>Accepted page content</strong>\n<code>html</code>, <code>text</code>, <code>image</code>, <code>blocks[]</code>, or <code>data</code>. Page-specific <code>design</code> values override global paper settings.\n        </div>\n</aside>\n</div>\n    <footer class=\"statusbar\">\n<span id=\"statusMessage\">Ready.</span>\n<span>JSON-driven \u2022 separate cover art \u2022 real page fold preview \u2022 local + optional backend storage</span>\n</footer>\n  </div>\n  <audio id=\"pageFlipAudio\" src=\"assets/audio/page-flip.wav\" preload=\"auto\"></audio>\n</section>",
+    template: "<section class=\"book-studio-feature\" aria-label=\"LiteraryFriend Book Builder\">\n  <div class=\"book-app-shell\">\n    <header class=\"book-topbar\">\n      <div class=\"book-feature-title\">\n        <img src=\"assets/images/literaryfriend-icon.png\" alt=\"\" class=\"app-icon\">\n        <div><strong>Book Builder</strong><span>Create, design, preview, and export page-flipping books inside LiteraryFriend.</span></div>\n      </div>\n      <div class=\"top-actions\">\n        <span class=\"autosave-state\" id=\"autosaveState\" aria-live=\"polite\">Local draft ready</span>\n        <button class=\"ui-button\" id=\"saveLocalBtn\" type=\"button\">Save Local</button>\n        <button class=\"ui-button\" id=\"exportProjectBtn\" type=\"button\">Export Project JSON</button>\n        <button class=\"ui-button primary\" id=\"readerModeBtn\" type=\"button\" aria-pressed=\"false\">Reader Mode</button>\n      </div>\n    </header>\n    <div class=\"book-workspace\">\n<aside aria-label=\"Book controls\" class=\"control-panel\" id=\"controlPanel\">\n<nav aria-label=\"Editor sections\" class=\"panel-tabs\">\n<button class=\"panel-tab active\" data-panel=\"bookPanel\" type=\"button\">Book</button>\n<button class=\"panel-tab\" data-panel=\"coverPanel\" type=\"button\">Cover</button>\n<button class=\"panel-tab\" data-panel=\"pagesPanel\" type=\"button\">Pages</button>\n<button class=\"panel-tab\" data-panel=\"designPanel\" type=\"button\">Paper</button>\n<button class=\"panel-tab\" data-panel=\"cloudPanel\" type=\"button\">Cloud</button>\n</nav>\n<section class=\"panel-page active\" id=\"bookPanel\">\n<div class=\"panel-heading\">\n<h2>Book Setup</h2>\n<p>Title, trim size, and project import.</p>\n</div>\n<label class=\"field\">Book title\n            <input autocomplete=\"off\" id=\"bookTitleInput\" maxlength=\"180\" type=\"text\"/>\n</label>\n<label class=\"field\">Subtitle\n            <input autocomplete=\"off\" id=\"bookSubtitleInput\" maxlength=\"240\" type=\"text\"/>\n</label>\n<label class=\"field\">Author / creator\n            <input autocomplete=\"off\" id=\"bookAuthorInput\" maxlength=\"160\" type=\"text\"/>\n</label>\n<label class=\"field\">Book size\n            <select id=\"sizePresetSelect\"></select>\n</label>\n<div class=\"two-col\">\n<label class=\"field\">Width (in)\n              <input id=\"customWidthInput\" max=\"20\" min=\"2\" step=\"0.01\" type=\"number\"/>\n</label>\n<label class=\"field\">Height (in)\n              <input id=\"customHeightInput\" max=\"20\" min=\"2\" step=\"0.01\" type=\"number\"/>\n</label>\n</div>\n<div class=\"size-readout\" id=\"sizeReadout\"></div>\n<div class=\"button-stack\">\n<button class=\"ui-button primary\" id=\"newBookBtn\" type=\"button\">New Blank Book</button>\n<button class=\"ui-button\" id=\"loadStarterBtn\" type=\"button\">Load Favorite Short Stories</button>\n<label class=\"file-button\">Import Project JSON\n              <input accept=\".json,application/json\" id=\"projectImportInput\" type=\"file\"/>\n</label>\n</div>\n<div class=\"info-box\">\n            Load the included favorite short stories when you want a complete book-building example. Cover art remains a separate upload.\n          </div>\n</section>\n<section class=\"panel-page\" id=\"coverPanel\">\n<div class=\"panel-heading\">\n<h2>Cover Designer</h2>\n<p>Cover art is uploaded separately from page JSON.</p>\n</div>\n<label class=\"file-button primary-file\">Upload / Replace Cover Art\n            <input accept=\"image/*\" id=\"coverArtInput\" type=\"file\"/>\n</label>\n<button class=\"ui-button danger-lite\" id=\"clearCoverBtn\" type=\"button\">Clear Cover Art</button>\n<label class=\"field\">Cover preset\n            <select id=\"coverPresetSelect\">\n<option value=\"classic\">Classic</option>\n<option value=\"midnight\">Midnight</option>\n<option value=\"retro-pulp\">Retro Pulp</option>\n<option value=\"minimal\">Minimal</option>\n<option value=\"custom\">Custom</option>\n</select>\n</label>\n<label class=\"check-row\"><input id=\"coverShowTextInput\" type=\"checkbox\"/> Show title text over art</label>\n<label class=\"field\">Cover title\n            <input id=\"coverTitleInput\" maxlength=\"180\" type=\"text\"/>\n</label>\n<label class=\"field\">Cover subtitle\n            <input id=\"coverSubtitleInput\" maxlength=\"240\" type=\"text\"/>\n</label>\n<label class=\"field\">Cover author\n            <input id=\"coverAuthorInput\" maxlength=\"160\" type=\"text\"/>\n</label>\n<div class=\"two-col colors-row\">\n<label class=\"field\">Cover color\n              <input id=\"coverBgInput\" type=\"color\"/>\n</label>\n<label class=\"field\">Cover text\n              <input id=\"coverTextInput\" type=\"color\"/>\n</label>\n</div>\n<label class=\"field\">Art fit\n            <select id=\"coverFitSelect\">\n<option value=\"cover\">Fill / crop</option>\n<option value=\"contain\">Fit whole art</option>\n<option value=\"stretch\">Stretch</option>\n</select>\n</label>\n<label class=\"field\">Dark overlay <span id=\"coverOverlayValue\">18%</span>\n<input id=\"coverOverlayInput\" max=\"80\" min=\"0\" step=\"1\" type=\"range\"/>\n</label>\n</section>\n<section class=\"panel-page\" id=\"pagesPanel\">\n<div class=\"panel-heading\">\n<h2>JSON Pages</h2>\n<p>Upload individual pages or a batch of page JSON files.</p>\n</div>\n<label class=\"file-button primary-file\">Upload JSON Page(s)\n            <input accept=\".json,application/json\" id=\"pageFilesInput\" multiple=\"\" type=\"file\"/>\n</label>\n<div class=\"button-grid\">\n<button class=\"ui-button\" id=\"addBlankPageBtn\" type=\"button\">Add Blank</button>\n<button class=\"ui-button\" id=\"downloadPagesBtn\" type=\"button\">Export Pages</button>\n</div>\n<label class=\"check-row\"><input checked=\"\" id=\"naturalSortInput\" type=\"checkbox\"/> Sort imported files by filename</label>\n<div class=\"page-list-toolbar\">\n<span id=\"pageCountLabel\">0 pages</span>\n<button class=\"tiny-button\" id=\"duplicatePageBtn\" type=\"button\">Duplicate</button>\n</div>\n<div class=\"page-list\" id=\"pageList\" role=\"list\"></div>\n</section>\n<section class=\"panel-page\" id=\"designPanel\">\n<div class=\"panel-heading\">\n<h2>Paper &amp; Page Design</h2>\n<p>Global paper styling; a page JSON can override these values.</p>\n</div>\n<label class=\"field\">Paper preset\n            <select id=\"paperPresetSelect\">\n<option value=\"cream\">Book Cream</option>\n<option value=\"white\">Bright White</option>\n<option value=\"parchment\">Parchment</option>\n<option value=\"notebook\">Notebook Grid</option>\n<option value=\"night\">Night Reader</option>\n<option value=\"custom\">Custom</option>\n</select>\n</label>\n<div class=\"two-col colors-row\">\n<label class=\"field\">Paper\n              <input id=\"paperColorInput\" type=\"color\"/>\n</label>\n<label class=\"field\">Ink\n              <input id=\"inkColorInput\" type=\"color\"/>\n</label>\n</div>\n<label class=\"field\">Accent\n            <input id=\"accentColorInput\" type=\"color\"/>\n</label>\n<label class=\"field\">Pattern\n            <select id=\"paperPatternSelect\">\n<option value=\"plain\">Plain</option>\n<option value=\"paper\">Fine Paper</option>\n<option value=\"parchment\">Parchment Grain</option>\n<option value=\"linen\">Linen</option>\n<option value=\"grid\">Grid</option>\n<option value=\"dots\">Dot Grid</option>\n</select>\n</label>\n<label class=\"field\">Reading font\n            <select id=\"pageFontSelect\">\n<option value=\"serif\">Book Serif</option>\n<option value=\"sans\">Clean Sans</option>\n<option value=\"mono\">Typewriter Mono</option>\n</select>\n</label>\n<label class=\"field\">Page margin <span id=\"pageMarginValue\">8%</span>\n<input id=\"pageMarginInput\" max=\"15\" min=\"3\" step=\"0.5\" type=\"range\"/>\n</label>\n<label class=\"field\">Built-in texture\n            <select id=\"builtinTextureSelect\">\n<option value=\"none\">None</option>\n<option value=\"cream\">Cream Fiber</option>\n<option value=\"parchment\">Parchment</option>\n<option value=\"linen\">Linen</option>\n<option value=\"custom\">Custom Upload</option>\n</select>\n</label>\n<label class=\"file-button\">Upload Page Texture / Design\n            <input accept=\"image/*\" id=\"pageTextureInput\" type=\"file\"/>\n</label>\n<button class=\"ui-button danger-lite\" id=\"clearTextureBtn\" type=\"button\">Clear Page Texture</button>\n<label class=\"check-row\"><input checked=\"\" id=\"pageNumbersInput\" type=\"checkbox\"/> Show page numbers</label>\n<label class=\"check-row\"><input checked=\"\" id=\"soundEnabledInput\" type=\"checkbox\"/> Page-flip sound</label>\n<label class=\"field\">Flip sound volume <span id=\"soundVolumeValue\">55%</span>\n<input id=\"soundVolumeInput\" max=\"100\" min=\"0\" step=\"1\" type=\"range\"/>\n</label>\n</section>\n<section class=\"panel-page\" id=\"cloudPanel\">\n<div class=\"panel-heading\">\n<h2>Account Storage</h2>\n<p>Save and load Book Builder projects with the LiteraryFriend account you signed into at startup.</p>\n</div>\n<div class=\"account-chip\" id=\"cloudStatus\">Account status not checked</div>\n<div class=\"cloud-user\" id=\"cloudUserLabel\">Not signed in</div>\n<div class=\"button-grid\">\n<button class=\"ui-button\" id=\"cloudRefreshBtn\" type=\"button\">Refresh Account</button>\n<button class=\"ui-button\" id=\"cloudOpenAccountBtn\" type=\"button\">Open Account</button>\n</div>\n<hr class=\"panel-rule\"/>\n<div class=\"button-grid\">\n<button class=\"ui-button\" id=\"cloudListBtn\" type=\"button\">Refresh Saved Books</button>\n<button class=\"ui-button primary\" id=\"cloudSaveBtn\" type=\"button\">Save Book</button>\n</div>\n<label class=\"field\">Saved book\n            <select id=\"cloudProjectSelect\">\n<option value=\"\">No saved book selected</option>\n</select>\n</label>\n<button class=\"ui-button\" id=\"cloudLoadBtn\" type=\"button\">Load Selected Book</button>\n<div class=\"info-box compact\">Sign in from LiteraryFriend Account to use cross-device book storage. Local Book Builder saves continue to work without an account.</div>\n</section>\n</aside>\n<main class=\"preview-panel\" id=\"previewPanel\">\n<div class=\"preview-toolbar\">\n<div class=\"book-meta-preview\">\n<strong id=\"previewTitle\">Untitled Book</strong>\n<span id=\"previewTrim\">6 \u00d7 9 in</span>\n</div>\n<div aria-live=\"polite\" class=\"engine-state\" id=\"engineState\">Loading page engine\u2026</div>\n</div>\n<section aria-label=\"Interactive book preview\" class=\"book-stage\" id=\"bookStage\">\n<div class=\"stage-surface\">\n<div class=\"book-host\" id=\"bookHost\">\n<div class=\"book-mount\" id=\"bookMount\"></div>\n</div>\n</div>\n</section>\n<div aria-label=\"Book navigation\" class=\"reader-controls\" role=\"group\">\n<button aria-label=\"Go to cover\" class=\"nav-button\" id=\"firstPageBtn\" type=\"button\">|\u2039</button>\n<button aria-label=\"Previous page\" class=\"nav-button\" id=\"prevPageBtn\" type=\"button\">\u2039</button>\n<div class=\"page-position\" id=\"pagePosition\">Cover</div>\n<button aria-label=\"Next page\" class=\"nav-button\" id=\"nextPageBtn\" type=\"button\">\u203a</button>\n<button aria-label=\"Go to back cover\" class=\"nav-button\" id=\"lastPageBtn\" type=\"button\">\u203a|</button>\n<button aria-label=\"Toggle page flip sound\" aria-pressed=\"true\" class=\"nav-button sound-toggle\" id=\"soundToggleBtn\" type=\"button\">\ud83d\udd0a</button>\n</div>\n<div class=\"reader-tip\">Drag a page corner, click a page edge, swipe, or use \u2190 / \u2192. Covers use a firmer hard-page turn.</div>\n</main>\n<aside aria-label=\"Current page editor\" class=\"inspector-panel\" id=\"inspectorPanel\">\n<div class=\"inspector-heading\">\n<div>\n<h2>Page Editor</h2>\n<p>Edit the selected page as JSON.</p>\n</div>\n<span class=\"selected-page-badge\" id=\"selectedPageBadge\">No page</span>\n</div>\n<label class=\"field\">Page title\n          <input id=\"pageTitleInput\" maxlength=\"200\" type=\"text\"/>\n</label>\n<label class=\"field\">Page type\n          <select id=\"pageTypeSelect\">\n<option value=\"article\">Article</option>\n<option value=\"image\">Image</option>\n<option value=\"record\">Structured Record</option>\n<option value=\"blank\">Blank</option>\n</select>\n</label>\n<label class=\"field grow-field\">Page JSON\n          <textarea aria-label=\"Current page JSON\" id=\"pageJsonEditor\" spellcheck=\"false\"></textarea>\n</label>\n<div class=\"button-grid inspector-actions\">\n<button class=\"ui-button primary\" id=\"applyPageJsonBtn\" type=\"button\">Apply JSON</button>\n<button class=\"ui-button\" id=\"downloadPageBtn\" type=\"button\">Download Page</button>\n<button class=\"ui-button danger\" id=\"deletePageBtn\" type=\"button\">Delete</button>\n</div>\n<div class=\"schema-help\">\n<strong>Accepted page content</strong>\n<code>html</code>, <code>text</code>, <code>image</code>, <code>blocks[]</code>, or <code>data</code>. Page-specific <code>design</code> values override global paper settings.\n        </div>\n</aside>\n</div>\n    <footer class=\"statusbar\">\n<span id=\"statusMessage\">Ready.</span>\n<span>JSON-driven \u2022 separate cover art \u2022 real page fold preview \u2022 local + optional account storage</span>\n</footer>\n  </div>\n  <audio id=\"pageFlipAudio\" src=\"assets/audio/page-flip.wav\" preload=\"auto\"></audio>\n</section>",
     async mount(container) {
       if (!container) throw new Error('Book Builder container is required.');
       container.innerHTML = this.template;
