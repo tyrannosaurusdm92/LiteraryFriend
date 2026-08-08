@@ -1,0 +1,11 @@
+{
+  "schema": "literaryfriend/backend-config/v2",
+  "service": "LiteraryFriend Backend V2",
+  "webAppUrl": "https://script.google.com/macros/s/AKfycbw0lsf6upSeg1h_PD6cIyxLt1ukOfU71vRKuz3xc7-PlDbzKHFfvm4NR0c5eD1RoNNK/exec",
+  "libraryUrl": "https://script.google.com/macros/library/d/1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD/2",
+  "projectId": "literaryfriend-art-studio",
+  "imageAction": "art.ai.generate",
+  "chatAction": "ai.request",
+  "healthAction": "health",
+  "notes": "Art Studio uses the shared LiteraryFriend account session. Technical service configuration is not rendered in the creative interface."
+}

@@ -1,10 +1,10 @@
 {
-  "schema": "literaryfriend.manifest.v1",
   "name": "LiteraryFriend",
   "version": "1",
-  "status": "pre-deployment",
   "entry": "index.html",
-  "folders": [
+  "compiledBy": "William Saville AKA The Transgender T-Rex #TheTransgenderTRex",
+  "generatedAt": "2026-08-08",
+  "topLevelFolders": [
     "js",
     "css",
     "json",
@@ -12,454 +12,636 @@
     "docs",
     "backend"
   ],
-  "projectCredit": "Project Compiled by William Saville AKA The Transgender T-Rex #TheTransgenderTRex",
-  "features": {
-    "writerWorkspace": true,
-    "bookBuilderIntegrated": true,
-    "artStudioIntegrated": true,
-    "literaryAssistant": true,
-    "literaryCorpusRecords": 16192,
-    "extendedSpecialistUniqueRecords": 16264,
-    "docsViewer": true,
-    "cloudAccountConsole": true,
-    "directFileLaunchDesigned": true,
-    "freeLocalCore": true,
-    "externalPageFlipRequired": false
-  },
-  "backend": {
-    "webAppUrl": "https://script.google.com/macros/s/AKfycbxs5m-v5PQt2LZHO9T-OEckMim_jVDtvOgGeQJzR_bQ34FhbHvMFWssi1GQnBnWosXM/exec",
-    "libraryUrl": "https://script.google.com/macros/library/d/1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD/1",
-    "sourceFile": "backend/LiteraryFriend_Backend.gs",
-    "sha256": "aa7b81d7f0eeeebd95e296026eec8065e87697e3d0c1faa7586c5745b0732a10",
-    "modifiedByMerge": false,
-    "dispatchActionsSurfaced": 85
-  },
-  "brand": {
-    "brandFont": "Updock via Google Fonts",
-    "fontScope": "Only literal displayed LiteraryFriend wordmarks",
-    "fontBinaryBundled": false,
-    "palette": "cyan-centered lime-green/cyan/Dodger-blue"
-  },
-  "starterWorks": [
-    "Freedom Changes Everything",
-    "The Farmer's Plea"
+  "rootHtmlFiles": [
+    "index.html"
   ],
-  "packaging": {
-    "minimumArchiveKBRequested": 52000,
-    "compressionLevelPlanned": 1,
-    "note": "Meaningful code/data/assets retained; no filler or nested source-package dumps."
+  "documentationShownInApp": [
+    "docs/README.md",
+    "docs/TUTORIAL.md",
+    "docs/LICENSE.md"
+  ],
+  "serviceContract": {
+    "version": "V2 backend / V3 frontend parity pass",
+    "callableCapabilities": 156,
+    "frontendMappedCapabilities": 156,
+    "frontendExecutableCapabilities": 156,
+    "runtimeContract": "js/capability-contract.js",
+    "machineReadableContract": "json/backend-feature-contract.v3.json",
+    "callsiteAudit": "json/frontend-callsite-audit.v3.json",
+    "coverageAudit": "docs/FRONTEND_BACKEND_PARITY_V3.md"
   },
-  "inventoryNote": "File hashes exclude docs/MANIFEST.json itself to avoid self-referential hashing.",
+  "sourceOfTruth": {
+    "backend": "backend/LiteraryFriend_Backend.gs",
+    "productBlueprint": "docs/source/LiteraryFriend_Frontend_Product_Pitch_Project_Plan.docx"
+  },
+  "installSupport": [
+    "manifest.webmanifest",
+    "sw.js",
+    "js/pwa.js"
+  ],
+  "note": "MANIFEST.json omits its own hash to avoid recursive self-invalidation.",
+  "fileCountExcludingManifest": 120,
+  "totalBytesExcludingManifest": 176073757,
   "files": [
     {
+      "path": "assets/LiteraryFriend_aurora_magic_frame.html",
+      "sizeBytes": 3154606,
+      "sha256": "fced768c120f92dace3a0069c6be8e37e90b85fa96eb33a8419da7c66f3f7e86"
+    },
+    {
       "path": "assets/audio/page-flip.wav",
-      "bytes": 63548,
+      "sizeBytes": 63548,
       "sha256": "a95c31cfd047a62d5138c1c41cd99bc8a53b0a5f8f866ea69202afcc977f347d"
     },
     {
       "path": "assets/images/art-studio-icon-180.png",
-      "bytes": 9808,
+      "sizeBytes": 9808,
       "sha256": "fd0445655c92ff34941c9156fab0446d7e03fd6b551a87415e42e60aa389276d"
     },
     {
       "path": "assets/images/art-studio-icon-192.png",
-      "bytes": 10842,
+      "sizeBytes": 10842,
       "sha256": "c16f0580b00cf6d608238343a098da00cfd551dd9018318a61e7c4d8602bd566"
     },
     {
       "path": "assets/images/art-studio-icon-512.png",
-      "bytes": 57526,
+      "sizeBytes": 57526,
       "sha256": "0f1d8e0da6a70caeed4cee468de7d4141f499cf8bc25e11c28dc58c80803bda8"
     },
     {
       "path": "assets/images/art-studio-icon-source.png",
-      "bytes": 2312991,
+      "sizeBytes": 2312991,
       "sha256": "fada68c8a310b597ce86f2a68d65692627593ba81dfd574143a3ac55fdfb1174"
     },
     {
       "path": "assets/images/icon-1024.png",
-      "bytes": 288339,
+      "sizeBytes": 288339,
       "sha256": "59e1e5e05ea4f93f7664ac12fcc67f655b92e786049397dfb0bc4576ff4d3242"
     },
     {
       "path": "assets/images/icon-128.png",
-      "bytes": 7381,
+      "sizeBytes": 7381,
       "sha256": "c32f371a41070988a56add9404a57205c7c4e870b9491808bc801deccf6f09d9"
     },
     {
       "path": "assets/images/icon-180.png",
-      "bytes": 13041,
+      "sizeBytes": 13041,
       "sha256": "7362021b11ecf0655673460d751bf1caf7d089ff7ac20f22257760273304457d"
     },
     {
       "path": "assets/images/icon-192.png",
-      "bytes": 14568,
+      "sizeBytes": 14568,
       "sha256": "e00881e04167c9250c228826394122ac4eca1d54b40636a7fe5238c866f78c7b"
     },
     {
       "path": "assets/images/icon-256.png",
-      "bytes": 24072,
+      "sizeBytes": 24072,
       "sha256": "2549be221fcf763e6f8e4482d3963bfdc417eb596b89ebadbce5aba7c6716f50"
     },
     {
       "path": "assets/images/icon-32.png",
-      "bytes": 890,
+      "sizeBytes": 890,
       "sha256": "a19adb009ae2d897fae7ecbdac303a7762f0f46040b83d4764d4ad257665aef3"
     },
     {
       "path": "assets/images/icon-384.png",
-      "bytes": 49416,
+      "sizeBytes": 49416,
       "sha256": "d7b6271d093ae9157f759861903cbe565091a0830e65711f612eff6f2cb1e92b"
     },
     {
       "path": "assets/images/icon-48.png",
-      "bytes": 1588,
+      "sizeBytes": 1588,
       "sha256": "7c50e899385bea40e6aa81faf956c253e0248bce6341ffd70ced4d5fba07ac7e"
     },
     {
       "path": "assets/images/icon-512.png",
-      "bytes": 81416,
+      "sizeBytes": 81416,
       "sha256": "372a12a6701278de3d2a5178b8ecb442169e7103a3f8a1c69d80419ff3fa8fc5"
     },
     {
       "path": "assets/images/icon-64.png",
-      "bytes": 2433,
+      "sizeBytes": 2433,
       "sha256": "b218ad822ffae91184a9226eeae43fdbd84094d9bbd6812f792b42450c2a8aba"
     },
     {
       "path": "assets/images/icon-768.png",
-      "bytes": 167827,
+      "sizeBytes": 167827,
       "sha256": "cf6c59c7c6e1f62d3d5306bffe17e7d06ed85bf9fa95e313579424fbc9870d39"
     },
     {
       "path": "assets/images/literaryfriend-icon.png",
-      "bytes": 2342033,
+      "sizeBytes": 2342033,
       "sha256": "0fbf4c9fa50a97bc4e28a59af0ca7c7ee02a849cbfecbcefd20c6753be3e9cdd"
     },
     {
       "path": "assets/images/paper-cream-fiber.jpg",
-      "bytes": 892415,
+      "sizeBytes": 892415,
       "sha256": "4ab2896f987005019d5acb6451cd3894d6dd512780c281460b5c8d4b34a61655"
     },
     {
       "path": "assets/images/paper-linen.jpg",
-      "bytes": 971506,
+      "sizeBytes": 971506,
       "sha256": "79459633c19abfd74486d591586cd41817c850cc5f698dce5259cecc241adcc4"
     },
     {
       "path": "assets/images/paper-parchment.jpg",
-      "bytes": 1146883,
+      "sizeBytes": 1146883,
       "sha256": "0ec570437a653baabd1a23108038867b3b4e4f9ffd4b977c95fe026a9f483737"
     },
     {
+      "path": "backend/BACKEND_CAPABILITIES.md",
+      "sizeBytes": 2413,
+      "sha256": "45d0bf129abe0d3fa3eeca127621465ded4abd00ace8cac79f18459d0497ed46"
+    },
+    {
       "path": "backend/BACKEND_LINKS.txt",
-      "bytes": 424,
-      "sha256": "244bebeb7962f1b59db5b442ef5554e157229513b6f1a9989ee3c8712801a682"
+      "sizeBytes": 424,
+      "sha256": "cf1fb78a531bd3e249f7a2153a6ff9e21de1856ac104f4329af756de971357e6"
     },
     {
       "path": "backend/LiteraryFriend_Backend.gs",
-      "bytes": 114527,
-      "sha256": "aa7b81d7f0eeeebd95e296026eec8065e87697e3d0c1faa7586c5745b0732a10"
+      "sizeBytes": 274223,
+      "sha256": "2aca0a0aa41a44c2e0cf156c7bade9ba5752aa0f3638afdefcc6e8612e2c6c32"
+    },
+    {
+      "path": "backend/art-studio-backend-config.json",
+      "sizeBytes": 632,
+      "sha256": "cd5c39ac58b83730575e17d46414c9dda3a0015fbb48372160cb96cc63033ea1"
+    },
+    {
+      "path": "backend/backend-config.json",
+      "sizeBytes": 592,
+      "sha256": "c6bbec98b745098a46f0de136dfe1a207cdbf33c001b9fc0ccd35993ec5daf79"
     },
     {
       "path": "css/accessibility.css",
-      "bytes": 1542,
+      "sizeBytes": 1542,
       "sha256": "61099fc75e81ce9901fab3dd90aa02a334ccf02841341d3c9d154234f814d84e"
     },
     {
       "path": "css/app.css",
-      "bytes": 30010,
+      "sizeBytes": 30010,
       "sha256": "c663c0dd4c9f7bffa9b79bd61ccd4d24a91f001c4a461d4e465b74434123d620"
     },
     {
+      "path": "css/art-studio-effects-colors.css",
+      "sizeBytes": 3972,
+      "sha256": "63f73b819ba612ffede102677ac1b91e15287ce04e4e61825c0775e4c896f750"
+    },
+    {
+      "path": "css/art-studio-effects-enhancements.css",
+      "sizeBytes": 2573,
+      "sha256": "911bbe750c5ef809ca8c3b3d370f7bfe8b4a3cf7ea4dc9608b04dfe7bad99a0c"
+    },
+    {
+      "path": "css/art-studio-effects-textures.css",
+      "sizeBytes": 12517,
+      "sha256": "3d5e2bedea8697ce9cd665207759ed7d6dd789fd2d262d73225cbd82485e328a"
+    },
+    {
       "path": "css/art-studio-retro.css",
-      "bytes": 497,
-      "sha256": "ecf69bfb82833fb340f78f252de9e6fcc2a7c93cf8571d87d42854e08a433b7a"
+      "sizeBytes": 3305,
+      "sha256": "b08097dfd31fb401f906e8e6430bd53446f8df360d3d90fe8ac6841a2df74f5d"
+    },
+    {
+      "path": "css/art-studio-shell.css",
+      "sizeBytes": 2113,
+      "sha256": "0ae8560bcfce4373c410bd367ba38a09a1907f60592f8bca69f4513521f0189a"
     },
     {
       "path": "css/art-studio-styles.css",
-      "bytes": 2716,
+      "sizeBytes": 2716,
       "sha256": "a66a8f5d009a0b3b084745a5ec4dec91ee07dded37d5a28b0bdc9b2dee42296c"
     },
     {
       "path": "css/art-studio-workspace.css",
-      "bytes": 9393,
+      "sizeBytes": 9393,
       "sha256": "ec6774d28ec3120025189b5ee399cdbdcc978b9cc1eeabe84d573ea6bae2ca3f"
     },
     {
+      "path": "css/art-studio.css",
+      "sizeBytes": 14693,
+      "sha256": "c5b10a6d2a4d099faace18951bdddd82c5ad8e1bb66901c8954d0895e9748786"
+    },
+    {
       "path": "css/book-studio.css",
-      "bytes": 33464,
-      "sha256": "b580d27c595ef67d44fd4cb4f9f028ec179ad62dd8266d29f21576775bac0b44"
+      "sizeBytes": 33445,
+      "sha256": "5e54521120149295795093372411f9ea5518a4f374d73b2dcf7da0e6b0460a06"
+    },
+    {
+      "path": "css/connected-features.css",
+      "sizeBytes": 2270,
+      "sha256": "436c51c3e0afbf3c026a796bdce39bd8b33f63526442b542237a78fc360aa4ad"
+    },
+    {
+      "path": "css/feature-hubs.css",
+      "sizeBytes": 3016,
+      "sha256": "168543de8d6a3e77fe036442ce76f8681e2d83a70a7c32264f41b62f2407abac"
+    },
+    {
+      "path": "css/frontend-parity.css",
+      "sizeBytes": 1319,
+      "sha256": "5aadd1cfc85733485119c8966817e7e1f873acd9fbbee8c730a2c90296aed835"
+    },
+    {
+      "path": "css/login.css",
+      "sizeBytes": 9883,
+      "sha256": "ba8571d7783d8466547df5ef63aaa42f2227b7a79b062b96c79dbdaa3f10bfa1"
     },
     {
       "path": "css/merged.css",
-      "bytes": 4863,
-      "sha256": "210b4f89dab84ba818cbbcebcb7a1651317183d405eb6ab805f2deff685165e4"
+      "sizeBytes": 6424,
+      "sha256": "194e8eba8f1fcb62e2661622f6d7d3220c2c4dea846044cbd77953a6da764456"
     },
     {
       "path": "css/print.css",
-      "bytes": 1013,
+      "sizeBytes": 1013,
       "sha256": "72e07aac8ae095bc5e0a40e44329ee022459748cc3e88674cbfd224e6f2d89ff"
     },
     {
-      "path": "docs/AUDIT.md",
-      "bytes": 2519,
-      "sha256": "0f2ecb0d5b06301e09a4b31bbbe957c4f7915bbbb1589bf6fe2f39e17c588098"
+      "path": "docs/ART_AI_TOOL_PARITY_V3.md",
+      "sizeBytes": 2163,
+      "sha256": "331e37fa1128107712a8cea066b67ddc84797a7db3c0b6302cadea4044cc27e0"
     },
     {
-      "path": "docs/BACKEND_CAPABILITIES.md",
-      "bytes": 2413,
-      "sha256": "b9f2913031a622e0076f266be9f38b9edc0adba4011d229bb56d1bff2399cb69"
+      "path": "docs/AUDIT.md",
+      "sizeBytes": 7707,
+      "sha256": "d69ec7be7130c4a2e6000ac70fee89e9d1705b97b32bf9b9b3cb316bb434ad46"
+    },
+    {
+      "path": "docs/AUTH_FLOW_V3.md",
+      "sizeBytes": 1979,
+      "sha256": "89744c4515f59d328c8734c1eab889414676cb7b81c4167667a79667541c63ab"
     },
     {
       "path": "docs/BUILD_REPORT.txt",
-      "bytes": 1623,
-      "sha256": "4897b2fb0050f2a81e71215c2f95cc8cb6ad7d9aadec61c13cdf4d4be0d9ab9c"
+      "sizeBytes": 5077,
+      "sha256": "f63f90f558271a2b155c69c98f5e221247822f3425ee8b9630bad31108a63df0"
+    },
+    {
+      "path": "docs/BUILD_REPORT_V3.txt",
+      "sizeBytes": 5077,
+      "sha256": "f63f90f558271a2b155c69c98f5e221247822f3425ee8b9630bad31108a63df0"
+    },
+    {
+      "path": "docs/FRONTEND_BACKEND_COVERAGE_V2.md",
+      "sizeBytes": 15862,
+      "sha256": "0d381ba40bce79d5b4680e5e6eb79acbf56f6d3f2c7b559b123fd9cdaebd6c6a"
+    },
+    {
+      "path": "docs/FRONTEND_BACKEND_PARITY_V3.md",
+      "sizeBytes": 12318,
+      "sha256": "70dc514133e17bb042ec07a95aa5d0f4f7e3fab25256ab21a1c4293354e30387"
     },
     {
       "path": "docs/LICENSE.md",
-      "bytes": 4709,
-      "sha256": "39fb037e600bb572290736294fe82253fbe2e6745aacd0151322e8e6417c6a3b"
+      "sizeBytes": 3338,
+      "sha256": "2ae187d3259fe876da5a4662388368b29f4123acec2e0f00d19192ed3560be1a"
     },
     {
       "path": "docs/PAGE_FLIP_RESEARCH.md",
-      "bytes": 1431,
+      "sizeBytes": 1431,
       "sha256": "10885e8f19369fc5938e7c9fa54b419cfb880ad0cbda054bbf72a33ac79a58ee"
     },
     {
       "path": "docs/README.md",
-      "bytes": 5143,
-      "sha256": "e7dceb5c855d431f0ff054bf47b8d816c947873eb910095bd92941c2b80c0288"
+      "sizeBytes": 8070,
+      "sha256": "775859da27e2259bd10315e6ca0bb39c24653486213430bd42f3543381b6d3f1"
     },
     {
       "path": "docs/SOURCE_MAP.md",
-      "bytes": 2418,
-      "sha256": "ba07a8a5c4dffc15ecff48f4c0a8bc057f347c7f36b4706fd8bb54ec1a6db813"
+      "sizeBytes": 3198,
+      "sha256": "80e2e9ffd424046cf2c7b0ce8c104071cdd5e11c62da9386bf554029d4196e18"
+    },
+    {
+      "path": "docs/TUTORIAL.md",
+      "sizeBytes": 17774,
+      "sha256": "be1a92fcb99dfe3258fdc9dd5d331161739cb6b1606ce48990449c71234518cd"
+    },
+    {
+      "path": "docs/source/LiteraryFriend_Frontend_Product_Pitch_Project_Plan.docx",
+      "sizeBytes": 1239037,
+      "sha256": "6cee1542fb6fc394ab7e0ca8da3f7cea35336ed2afadcfeaa089046699e63000"
     },
     {
       "path": "index.html",
-      "bytes": 7213,
-      "sha256": "b43446ac1a4465a0f08e6e1683e28ccbbf91e6dab4f091f8a748e95f68ddfb02"
+      "sizeBytes": 17740,
+      "sha256": "32bc53a2297ba413c067dd0bdfa6218cea579dbdcd01728674572edb28070410"
     },
     {
       "path": "js/accessibility.js",
-      "bytes": 2909,
+      "sizeBytes": 2909,
       "sha256": "25456fd2bc58ce86b4be3ed4234d8f585d5f7db6e1c4f2c47410fa9a48b6db20"
     },
     {
       "path": "js/api.js",
-      "bytes": 7670,
-      "sha256": "d778aef631a0aee01ec0f7c1e741249ad45f70f57d77e6228e76b77e6d2e6b05"
+      "sizeBytes": 11163,
+      "sha256": "c80aec42c87d4c61c9743dfab0e0ef6cbaa1f92f48d9eb12a64d323ceeebda4d"
     },
     {
       "path": "js/app.js",
-      "bytes": 94033,
-      "sha256": "df26e8024855c166be67cc129a64c91b0d95a46e6c6e4d0f5e1fe7c7e56a13ea"
+      "sizeBytes": 138006,
+      "sha256": "898620d8b25c07c087cd154d79d17aa1eba355a10bc94482e2c7665c42c2f875"
+    },
+    {
+      "path": "js/art-ai-director.js",
+      "sizeBytes": 24761,
+      "sha256": "4dea4e0378dec3a288b44b80dde2e3569ad7ccca7bee9890347df621f0572691"
     },
     {
       "path": "js/art-studio-app.js",
-      "bytes": 38924,
-      "sha256": "6f6755d19a7b0f4c418022f28e0a5e8ac9cda402c0f018480444399b015c126e"
+      "sizeBytes": 47241,
+      "sha256": "c37e587254452ba682ff5b318d27f126ab4cded8d541c20323406f723dbcafb8"
     },
     {
       "path": "js/art-studio-backend.js",
-      "bytes": 5651,
-      "sha256": "c3dca038b8a4cdce24e16d329b68efe919acabd472844ef13138859f25a30307"
+      "sizeBytes": 9732,
+      "sha256": "937086ded7f3455174f2e7144f3804b3ffdc3ed7a13ec0ade99c3bdabd376dd7"
     },
     {
       "path": "js/art-studio-config.js",
-      "bytes": 7214,
-      "sha256": "02ed2b7b34e1af4162de3d0760f8cda5bee09b3a6723f34bb39e5593c36a9c3c"
+      "sizeBytes": 7300,
+      "sha256": "4a92f12a7e083e363c60ae3b9d2b5fb2752f51af8385708957cd481351b44d94"
     },
     {
       "path": "js/art-studio-editor.js",
-      "bytes": 8523,
-      "sha256": "31160f261fd1459dcc112142de2e38aab42d52c774a576f5e2ae6435208fadc3"
+      "sizeBytes": 16448,
+      "sha256": "3502ac4ca4bea3e02d159c6ccc84a1e09b16e1252c22bc47c5b3fd828c3d65f5"
+    },
+    {
+      "path": "js/art-studio-effects-engine.js",
+      "sizeBytes": 24708,
+      "sha256": "09e1c97e5811db23313299c533e5bfd7ff6429d95df7be22b9335f726cf8add6"
+    },
+    {
+      "path": "js/art-studio-effects-ui.js",
+      "sizeBytes": 15183,
+      "sha256": "ca7a982363e24277c0910a326abbc8f39f2a0de7f91922e8fbbaaa6cc6b24e6f"
     },
     {
       "path": "js/art-studio-embed.js",
-      "bytes": 27283,
-      "sha256": "e58566a9187c1f9575eb1a25eae8d2a2b5671dae8f4c69bb6494635691f7f782"
+      "sizeBytes": 38350,
+      "sha256": "5888aca7f0565576537cf8bec077006095bb1d963316456937b1812a54da2dda"
+    },
+    {
+      "path": "js/art-studio-merged-tools.js",
+      "sizeBytes": 12805,
+      "sha256": "2aa2d5bdad85c7df954213c1c3a3e0aac3fa79d4e64c17930fb5ea551e811709"
     },
     {
       "path": "js/art-studio-model.js",
-      "bytes": 2350,
-      "sha256": "c636a07d56a0589f6af4763534567c2fc9290ae12db0208d2d4505f61de65ef6"
+      "sizeBytes": 2522,
+      "sha256": "26f05152f719572403e7b681ee79b773c82d40ac55c64c2b58631541e61a66d8"
     },
     {
       "path": "js/art-studio-render.js",
-      "bytes": 13401,
-      "sha256": "6c3efcfd4b7dc9274161c6a3a74633356d5dcc7ec553f09a16e7213797cab9d3"
+      "sizeBytes": 9671,
+      "sha256": "5678f2c053a0b1fec41fc800de666409b016fd47cc9c717687ae4d6d74e2d760"
     },
     {
       "path": "js/art-studio-storage.js",
-      "bytes": 1676,
+      "sizeBytes": 1676,
       "sha256": "7185b98a364d21d4c4c981e5834c68f8985a8198138840bea6dad24cb0fcf3c9"
     },
     {
+      "path": "js/art-studio-tools.js",
+      "sizeBytes": 3395,
+      "sha256": "b270c77dd44d66496b4c233efcb6473b5fdcf1ddef0e3e9e56d1ef6abcee01a1"
+    },
+    {
       "path": "js/assistant.js",
-      "bytes": 8287,
+      "sizeBytes": 8287,
       "sha256": "fc758153e5fbf7b01549410e49ae72f35748b9d073ba9c4f9912fbf0d33293bd"
     },
     {
-      "path": "js/backend-console.js",
-      "bytes": 17803,
-      "sha256": "b4873263c286a3376faf97b07dd72e8679fb555a33c9becca333ff9743ced6dd"
+      "path": "js/book-studio.js",
+      "sizeBytes": 112165,
+      "sha256": "2f64186835d1f6ff271125beb40bbca7d246652fd9b49afd8262708b46250668"
     },
     {
-      "path": "js/book-studio.js",
-      "bytes": 116191,
-      "sha256": "bf47cf0631a19604de7b7b92ce2af0943a4514d3714d109cf815404d8be32d71"
+      "path": "js/capability-contract.js",
+      "sizeBytes": 13497,
+      "sha256": "f4a7983d1a90c53196f055cdcd49c08283670ad86792998d47788924145d9d25"
+    },
+    {
+      "path": "js/connected-features.js",
+      "sizeBytes": 73493,
+      "sha256": "5a812ecd4a8c9b29a3fc60e9ff38b23f74de865b26c4fe49fc784c007332cc38"
     },
     {
       "path": "js/core.js",
-      "bytes": 8725,
+      "sizeBytes": 8725,
       "sha256": "97291ddd5d8f282bd3850410303915985bbfadab62e6db2b7f6661402be2f1ae"
     },
     {
       "path": "js/docs-content.js",
-      "bytes": 17617,
-      "sha256": "be02d5dd8d0168e2dd64b0d93a2109ff9331295c9606ffd4676400ea57c0f5ff"
+      "sizeBytes": 29583,
+      "sha256": "b52b4d21816411e960d95401e21e967d785b90cb1d161f062b5f83281c9ac603"
     },
     {
       "path": "js/editor.js",
-      "bytes": 22442,
+      "sizeBytes": 22442,
       "sha256": "9b9b5c4743e723a7824d159596c418e050e1e9d3491dc03601ad82f675abc04c"
     },
     {
+      "path": "js/feature-hubs.js",
+      "sizeBytes": 24668,
+      "sha256": "608429ec278a14f9153397f0bdbcab4bc032b6a982ac9c15c74bf84b741c4c48"
+    },
+    {
+      "path": "js/frontend-parity.js",
+      "sizeBytes": 4386,
+      "sha256": "58c4aed3373faa0aab92dd11065eae757b8f4d9af7355f0297fd38215527a32e"
+    },
+    {
+      "path": "js/import-consolidation.js",
+      "sizeBytes": 16648,
+      "sha256": "c077a16c9d37b2511bbd1571bb95993e722c22b40722c7afa93fdbea90d87c36"
+    },
+    {
       "path": "js/literary-corpus-index.js",
-      "bytes": 15604149,
+      "sizeBytes": 15604149,
       "sha256": "62a6c1795e2f0c7e2e62b96a5e8f5738df0f3120da9cdf1e7177d1787f90be7e"
     },
     {
       "path": "js/literary-corpus-part-1.js",
-      "bytes": 12058712,
+      "sizeBytes": 12058712,
       "sha256": "639d8857b3f3374031e9fa57ce3ed4c43be93e6435532c552eda999dcf2f42fe"
     },
     {
       "path": "js/literary-corpus-part-2.js",
-      "bytes": 12064767,
+      "sizeBytes": 12064767,
       "sha256": "2149f2e366883701fbe4e502ad3452e5bcbb31a124f085698dca674da0b09173"
     },
     {
       "path": "js/literary-corpus-part-3.js",
-      "bytes": 12060213,
+      "sizeBytes": 12060213,
       "sha256": "be7c581d5a756091690759a8bdb3e2c076258becebcb97ff387708fd414fce7e"
     },
     {
       "path": "js/literary-corpus-part-4.js",
-      "bytes": 12129968,
+      "sizeBytes": 12129968,
       "sha256": "07a951c4110ca718d061db4f9a50be089f24ba04fb5adf6c72a1e7a7658e0559"
     },
     {
+      "path": "js/login.js",
+      "sizeBytes": 13928,
+      "sha256": "91b6216685259e0c4358333d250e202f3118a77b3f9021ea13a7f94c6d3b8c58"
+    },
+    {
+      "path": "js/project-switcher.js",
+      "sizeBytes": 995,
+      "sha256": "f1d237393a6d6914738e7aac3ba35ff2104675a0b9930268fe44ed6ae455f592"
+    },
+    {
+      "path": "js/pwa.js",
+      "sizeBytes": 345,
+      "sha256": "d038e758dbe7d450da81ab06e4707673f8cab3b278580cde5a3cd9e0f2dd7144"
+    },
+    {
       "path": "js/security.js",
-      "bytes": 1387,
+      "sizeBytes": 1387,
       "sha256": "93452a30f393d894c51698d33382446c3cc65bcfd458068e47195fdd72ae563f"
     },
     {
       "path": "js/specialist-corpus-part-1.js",
-      "bytes": 15498636,
+      "sizeBytes": 15498636,
       "sha256": "15e4cafa936e1faf586cb777650f343ff8660379172bc91fd29daddb28c5cf28"
     },
     {
       "path": "js/specialist-corpus-part-2.js",
-      "bytes": 15499298,
+      "sizeBytes": 15499298,
       "sha256": "d0f0657e862118a66cc0c2e73f52362fb49377e3cee4ad689eff35bece9f9047"
     },
     {
       "path": "js/specialist-corpus-part-3.js",
-      "bytes": 15499239,
+      "sizeBytes": 15499239,
       "sha256": "9e8e830dade295b0640c91cd9bf4b1b5ccbe75963aae957597148e9043beddfb"
     },
     {
       "path": "js/specialist-corpus-part-4.js",
-      "bytes": 2217332,
+      "sizeBytes": 2217332,
       "sha256": "3c739d83ecca56deeb9a131a1c4bb8ee95c76ada3d170827b0e43981e13b0e58"
     },
     {
       "path": "js/storage.js",
-      "bytes": 7668,
-      "sha256": "1c25073eae46d4bed97640a70c0b8700343d395b2f69f45db063e2f1695f86cb"
+      "sizeBytes": 6159,
+      "sha256": "e02900653603c4627acd14681d580e0d05de8872facb9c9f1823185c9534b20a"
+    },
+    {
+      "path": "js/story-engine.js",
+      "sizeBytes": 10966,
+      "sha256": "7b50821aadf5d41f7fcc1c7ed4e0f0c52aa7b212d6980b23c200af68a5f37f98"
     },
     {
       "path": "js/templates-data.js",
-      "bytes": 10256,
-      "sha256": "b905593fa255816854e308979be5ab307418795bf6bb82e39bdb1938fefce57a"
+      "sizeBytes": 11787,
+      "sha256": "b2d2cc022b3a4dfa3c0509b0ee8efda939e0e001a1994833c78c960007727a31"
     },
     {
       "path": "js/workflow-corpus-part-1.js",
-      "bytes": 16380865,
+      "sizeBytes": 16380865,
       "sha256": "e81adfc49374f4c2a0581e73b2c4ee85c0aff5e7d1df04368befb1dec608bb83"
     },
     {
       "path": "js/workflow-corpus-part-2.js",
-      "bytes": 16385206,
+      "sizeBytes": 16385206,
       "sha256": "6dee724930da71fa558aea79f8d53a448c43145f1b82d9f377950797c2825dc8"
     },
     {
       "path": "js/workflow-corpus-part-3.js",
-      "bytes": 16391660,
+      "sizeBytes": 16391660,
       "sha256": "d254e9af080d06ae010cae5805286a559db5f01722fc9b40824b151ec55c2dc0"
     },
     {
       "path": "js/writer-tools.js",
-      "bytes": 11869,
+      "sizeBytes": 11869,
       "sha256": "99c001a8597e38fba99ecbdd5ebe3acd174fbd2d4da33d9f35cc7274c08e0f43"
     },
     {
-      "path": "json/art-studio-backend-config.json",
-      "bytes": 633,
-      "sha256": "a26ec717b57d3dd72ed3bf920e9c739ca1f12947c240ae95250a294a9127bb82"
-    },
-    {
       "path": "json/art-studio-genre-presets.json",
-      "bytes": 1876,
+      "sizeBytes": 1876,
       "sha256": "0ab3256ab32b625d106d4f71e7c2c320265429ab3904e7cbd0e3c6773f09b916"
     },
     {
       "path": "json/art-studio-page-sizes.json",
-      "bytes": 2205,
+      "sizeBytes": 2205,
       "sha256": "8102db0cec4d21ca835cf8f3903fdf43f4582e42fd09963ec1a6c22440ba827f"
     },
     {
       "path": "json/art-studio-project-schema.json",
-      "bytes": 516,
+      "sizeBytes": 516,
       "sha256": "3a9db2b4b56a577476467542a596b034e8f6b621dedc1c7bec415e953007279f"
     },
     {
       "path": "json/art-studio-texture-presets.json",
-      "bytes": 760,
+      "sizeBytes": 760,
       "sha256": "0594794fe120d70fbb9826ea9ff863a8329404c56dd01918f98de6d746e08ff9"
     },
     {
-      "path": "json/backend-config.json",
-      "bytes": 578,
-      "sha256": "d2ca6f85911c4f2609c41823d967bc497dce6e7bad50c81b3255a52570c586bc"
+      "path": "json/backend-feature-contract.v3.json",
+      "sizeBytes": 17942,
+      "sha256": "120ef2a322cedc15802668fb9ebf1f077234407bab55dfe25a4b961e00c29a2c"
+    },
+    {
+      "path": "json/backend-feature-map.v2.json",
+      "sizeBytes": 23995,
+      "sha256": "8024da69f38550aac6ed47e4e660eed38c8cc28c60c5bb4112e9cc9444a96e0b"
+    },
+    {
+      "path": "json/effects-brush-presets.json",
+      "sizeBytes": 14653,
+      "sha256": "ab36046d560ce3e49dd1e9bb2b9665104290945e60ae49cef2aa1e41374a3035"
+    },
+    {
+      "path": "json/effects-color-palettes.json",
+      "sizeBytes": 16584,
+      "sha256": "6d74adf35c616b7203670a8f429965e7f3309fe4e12c7d44939e8d3ec0908527"
     },
     {
       "path": "json/favorite-short-stories.json",
-      "bytes": 26713,
+      "sizeBytes": 26713,
       "sha256": "bfd0ac7ae14734da559c6a030cf2312a8a5a3a55434fc6bf77f9c0ccad267c68"
     },
     {
+      "path": "json/frontend-callsite-audit.v3.json",
+      "sizeBytes": 38908,
+      "sha256": "5a878aa37a213617a4fb8d003069164c316615c4ca7377ed2de4e546adb53b06"
+    },
+    {
       "path": "json/page-example.json",
-      "bytes": 602,
+      "sizeBytes": 602,
       "sha256": "e44aff92429bdbb1a4f49a963e158c4f7eed5021fdbfdeb1cb0dca73966d020f"
     },
     {
       "path": "json/page-schema.json",
-      "bytes": 1283,
+      "sizeBytes": 1283,
       "sha256": "1c837fb772e4069a6ad1c6d4f0413caaeac1a650ff5ab17d4b8b7512fce39d07"
     },
     {
       "path": "json/size-presets.json",
-      "bytes": 2031,
+      "sizeBytes": 2031,
       "sha256": "1db6f5731b707a30dfae955577c26e8321015d82b3e59c0cedb9185534492717"
     },
     {
       "path": "json/templates.json",
-      "bytes": 13819,
-      "sha256": "3c52d5e68e4fd9eeb0e144b02aa514c18b93918120f70db92309a89f8ed386de"
+      "sizeBytes": 16396,
+      "sha256": "ca5bc56d8d577cdc17f45aa6881e3b91967ea4699b79b5afbea924c28e85c660"
+    },
+    {
+      "path": "json/texture-presets.json",
+      "sizeBytes": 7181,
+      "sha256": "ebffdce23c545cb23ad4aa8d002f45a4a4043c6328ae4f6656a762d47fbf2a3c"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "sizeBytes": 544,
+      "sha256": "8e8c8f1f66153f507116e1c8044f9f580d37fea2a2737e2a5f205e0e6cef235b"
+    },
+    {
+      "path": "sw.js",
+      "sizeBytes": 1935,
+      "sha256": "57d0ffd2c0dfae53fd13352ab90eb8f5991d72651568e99af43d3fa9d322ae3c"
     }
   ]
 }

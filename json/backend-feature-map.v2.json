@@ -1,0 +1,997 @@
+{
+  "schema": "literaryfriend-backend-frontend-coverage/v2",
+  "generatedAt": "2026-08-08T09:08:18.236597+00:00",
+  "backendSource": "backend/LiteraryFriend_Backend.gs",
+  "backendSha256": "2aca0a0aa41a44c2e0cf156c7bade9ba5752aa0f3638afdefcc6e8612e2c6c32",
+  "backendActions": 156,
+  "mappedActions": 156,
+  "backendMissingActions": [],
+  "frontendExecutableActions": 156,
+  "frontendMissingActions": [],
+  "surfaceCounts": {
+    "account": 27,
+    "app": 2,
+    "artstudio": 6,
+    "assistant": 2,
+    "bookbuilder": 13,
+    "characters": 8,
+    "consolidate": 9,
+    "continuity": 7,
+    "home": 1,
+    "identity": 9,
+    "language": 9,
+    "manuscript": 10,
+    "notes": 13,
+    "outline": 4,
+    "projects": 10,
+    "publish": 1,
+    "research": 3,
+    "revision": 2,
+    "search": 4,
+    "timeline": 3,
+    "trash": 3,
+    "world": 10
+  },
+  "surfaces": {
+    "activity.list": "account",
+    "ai.jobs.list": "assistant",
+    "ai.request": "assistant",
+    "art.ai.generate": "artstudio",
+    "art.asset.upload": "artstudio",
+    "art.delete": "artstudio",
+    "art.get": "artstudio",
+    "art.list": "artstudio",
+    "art.save": "artstudio",
+    "attachments.delete": "research",
+    "attachments.list": "research",
+    "attachments.upload": "research",
+    "auth.2fa.disable": "account",
+    "auth.2fa.enable": "account",
+    "auth.2fa.resend": "account",
+    "auth.2fa.status": "account",
+    "auth.2fa.verify": "identity",
+    "auth.contact.code.verify": "identity",
+    "auth.google": "identity",
+    "auth.google.link": "account",
+    "auth.login": "identity",
+    "auth.logout": "account",
+    "auth.me": "account",
+    "auth.password.change": "account",
+    "auth.password.reset.complete": "identity",
+    "auth.password.reset.request": "identity",
+    "auth.recovery.code.login": "identity",
+    "auth.recovery.codes.generate": "account",
+    "auth.recovery.contacts.add": "account",
+    "auth.recovery.contacts.list": "account",
+    "auth.recovery.contacts.remove": "account",
+    "auth.recovery.contacts.sendcode": "account",
+    "auth.register": "identity",
+    "auth.sessions.list": "account",
+    "auth.sessions.revoke": "account",
+    "auth.sessions.revoke.others": "account",
+    "backup.create": "account",
+    "books.chapters.format": "bookbuilder",
+    "books.chapters.list": "bookbuilder",
+    "books.chapters.save": "bookbuilder",
+    "books.cover.spec": "bookbuilder",
+    "books.delete": "bookbuilder",
+    "books.editions.delete": "bookbuilder",
+    "books.editions.list": "bookbuilder",
+    "books.editions.save": "bookbuilder",
+    "books.export.html": "bookbuilder",
+    "books.formats": "bookbuilder",
+    "books.get": "bookbuilder",
+    "books.list": "bookbuilder",
+    "books.save": "bookbuilder",
+    "bulk.apply": "consolidate",
+    "characters.search": "characters",
+    "client.config": "identity",
+    "consolidation.apply": "consolidate",
+    "consolidation.plan": "consolidate",
+    "drive.link.revoke": "account",
+    "drive.link.setroot": "account",
+    "drive.link.start": "account",
+    "drive.link.status": "account",
+    "editor.run": "revision",
+    "editor.runs.list": "revision",
+    "entities.delete": "world",
+    "entities.get": "world",
+    "entities.list": "world",
+    "entities.save": "world",
+    "export.project": "publish",
+    "export.user": "account",
+    "files.index.get": "consolidate",
+    "files.index.list": "consolidate",
+    "files.ingest": "consolidate",
+    "files.ingest.batch": "consolidate",
+    "health": "app",
+    "imports.list": "consolidate",
+    "imports.register": "consolidate",
+    "languages.delete": "language",
+    "languages.dictionary.export": "language",
+    "languages.generate": "language",
+    "languages.get": "language",
+    "languages.list": "language",
+    "languages.save": "language",
+    "lexicon.delete": "language",
+    "lexicon.list": "language",
+    "lexicon.save": "language",
+    "manifest": "app",
+    "nodes.delete": "manuscript",
+    "nodes.get": "manuscript",
+    "nodes.list": "manuscript",
+    "nodes.move": "manuscript",
+    "nodes.restore": "manuscript",
+    "nodes.save": "manuscript",
+    "notes.delete": "notes",
+    "notes.folders.create": "notes",
+    "notes.folders.delete": "notes",
+    "notes.folders.list": "notes",
+    "notes.folders.update": "notes",
+    "notes.get": "notes",
+    "notes.list": "notes",
+    "notes.quickcapture": "notes",
+    "notes.recentlydeleted": "notes",
+    "notes.restore": "notes",
+    "notes.save": "notes",
+    "notes.search": "notes",
+    "notes.tags.list": "notes",
+    "outline.generate": "outline",
+    "plotissues.action": "continuity",
+    "plotissues.applyfix": "continuity",
+    "plotissues.delete": "continuity",
+    "plotissues.list": "continuity",
+    "plotissues.resolve": "continuity",
+    "plotissues.save": "continuity",
+    "plotissues.scan": "continuity",
+    "profile.get": "account",
+    "profile.update": "account",
+    "projects.archive": "projects",
+    "projects.create": "projects",
+    "projects.get": "projects",
+    "projects.list": "projects",
+    "projects.relations.delete": "projects",
+    "projects.relations.list": "projects",
+    "projects.relations.save": "projects",
+    "projects.restore": "projects",
+    "projects.switch": "projects",
+    "projects.update": "projects",
+    "projects.workspace": "home",
+    "reading.state.get": "manuscript",
+    "reading.state.save": "manuscript",
+    "revisions.get": "trash",
+    "revisions.list": "trash",
+    "search.global": "search",
+    "search.saved.delete": "search",
+    "search.saved.list": "search",
+    "search.saved.save": "search",
+    "settings.get": "account",
+    "settings.update": "account",
+    "story.causes.delete": "world",
+    "story.causes.list": "world",
+    "story.causes.save": "world",
+    "story.debug.state": "manuscript",
+    "story.extract": "manuscript",
+    "story.facts.delete": "characters",
+    "story.facts.list": "characters",
+    "story.facts.save": "characters",
+    "story.knowledge.list": "characters",
+    "story.knowledge.save": "characters",
+    "story.mentions.delete": "characters",
+    "story.mentions.list": "characters",
+    "story.rules.delete": "world",
+    "story.rules.list": "world",
+    "story.rules.save": "world",
+    "story.threads.delete": "outline",
+    "story.threads.list": "outline",
+    "story.threads.save": "outline",
+    "timeline.delete": "timeline",
+    "timeline.list": "timeline",
+    "timeline.save": "timeline",
+    "trash.list": "trash"
+  },
+  "implementationFiles": {
+    "activity.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "ai.jobs.list": [
+      "js/connected-features.js"
+    ],
+    "ai.request": [
+      "js/art-ai-director.js",
+      "js/art-studio-backend.js"
+    ],
+    "art.ai.generate": [
+      "js/art-studio-backend.js"
+    ],
+    "art.asset.upload": [
+      "js/connected-features.js"
+    ],
+    "art.delete": [
+      "js/connected-features.js"
+    ],
+    "art.get": [
+      "js/art-studio-backend.js",
+      "js/connected-features.js"
+    ],
+    "art.list": [
+      "js/art-studio-backend.js",
+      "js/connected-features.js"
+    ],
+    "art.save": [
+      "js/art-studio-backend.js"
+    ],
+    "attachments.delete": [
+      "js/connected-features.js"
+    ],
+    "attachments.list": [
+      "js/connected-features.js"
+    ],
+    "attachments.upload": [
+      "js/api.js",
+      "js/connected-features.js"
+    ],
+    "auth.2fa.disable": [
+      "js/connected-features.js"
+    ],
+    "auth.2fa.enable": [
+      "js/connected-features.js"
+    ],
+    "auth.2fa.resend": [
+      "js/login.js"
+    ],
+    "auth.2fa.status": [
+      "js/connected-features.js"
+    ],
+    "auth.2fa.verify": [
+      "js/login.js"
+    ],
+    "auth.contact.code.verify": [
+      "js/login.js",
+      "js/app.js"
+    ],
+    "auth.google": [
+      "js/login.js"
+    ],
+    "auth.google.link": [
+      "js/connected-features.js"
+    ],
+    "auth.login": [
+      "js/api.js",
+      "js/login.js"
+    ],
+    "auth.logout": [
+      "js/api.js",
+      "js/login.js"
+    ],
+    "auth.me": [
+      "js/api.js",
+      "js/book-studio.js"
+    ],
+    "auth.password.change": [
+      "js/app.js"
+    ],
+    "auth.password.reset.complete": [
+      "js/login.js"
+    ],
+    "auth.password.reset.request": [
+      "js/login.js"
+    ],
+    "auth.recovery.code.login": [
+      "js/login.js"
+    ],
+    "auth.recovery.codes.generate": [
+      "js/app.js"
+    ],
+    "auth.recovery.contacts.add": [
+      "js/app.js"
+    ],
+    "auth.recovery.contacts.list": [
+      "js/login.js",
+      "js/app.js"
+    ],
+    "auth.recovery.contacts.remove": [
+      "js/app.js"
+    ],
+    "auth.recovery.contacts.sendcode": [
+      "js/login.js",
+      "js/app.js"
+    ],
+    "auth.register": [
+      "js/api.js",
+      "js/login.js"
+    ],
+    "auth.sessions.list": [
+      "js/app.js"
+    ],
+    "auth.sessions.revoke": [
+      "js/app.js"
+    ],
+    "auth.sessions.revoke.others": [
+      "js/connected-features.js"
+    ],
+    "backup.create": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "books.chapters.format": [
+      "js/connected-features.js"
+    ],
+    "books.chapters.list": [
+      "js/connected-features.js"
+    ],
+    "books.chapters.save": [
+      "js/connected-features.js"
+    ],
+    "books.cover.spec": [
+      "js/connected-features.js"
+    ],
+    "books.delete": [
+      "js/connected-features.js"
+    ],
+    "books.editions.delete": [
+      "js/connected-features.js"
+    ],
+    "books.editions.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "books.editions.save": [
+      "js/connected-features.js"
+    ],
+    "books.export.html": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "books.formats": [
+      "js/connected-features.js"
+    ],
+    "books.get": [
+      "js/connected-features.js"
+    ],
+    "books.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "books.save": [
+      "js/connected-features.js"
+    ],
+    "bulk.apply": [
+      "js/connected-features.js"
+    ],
+    "characters.search": [
+      "js/connected-features.js"
+    ],
+    "client.config": [
+      "js/login.js",
+      "js/connected-features.js"
+    ],
+    "consolidation.apply": [
+      "js/connected-features.js"
+    ],
+    "consolidation.plan": [
+      "js/connected-features.js"
+    ],
+    "drive.link.revoke": [
+      "js/connected-features.js"
+    ],
+    "drive.link.setroot": [
+      "js/connected-features.js"
+    ],
+    "drive.link.start": [
+      "js/connected-features.js"
+    ],
+    "drive.link.status": [
+      "js/connected-features.js"
+    ],
+    "editor.run": [
+      "js/connected-features.js"
+    ],
+    "editor.runs.list": [
+      "js/connected-features.js"
+    ],
+    "entities.delete": [
+      "js/connected-features.js"
+    ],
+    "entities.get": [
+      "js/connected-features.js"
+    ],
+    "entities.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "entities.save": [
+      "js/api.js",
+      "js/connected-features.js"
+    ],
+    "export.project": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "export.user": [
+      "js/connected-features.js"
+    ],
+    "files.index.get": [
+      "js/connected-features.js"
+    ],
+    "files.index.list": [
+      "js/connected-features.js"
+    ],
+    "files.ingest": [
+      "js/connected-features.js"
+    ],
+    "files.ingest.batch": [
+      "js/connected-features.js"
+    ],
+    "health": [
+      "js/art-studio-backend.js"
+    ],
+    "imports.list": [
+      "js/connected-features.js"
+    ],
+    "imports.register": [
+      "js/connected-features.js"
+    ],
+    "languages.delete": [
+      "js/connected-features.js"
+    ],
+    "languages.dictionary.export": [
+      "js/connected-features.js"
+    ],
+    "languages.generate": [
+      "js/connected-features.js"
+    ],
+    "languages.get": [
+      "js/connected-features.js"
+    ],
+    "languages.list": [
+      "js/connected-features.js"
+    ],
+    "languages.save": [
+      "js/api.js"
+    ],
+    "lexicon.delete": [
+      "js/connected-features.js"
+    ],
+    "lexicon.list": [
+      "js/connected-features.js"
+    ],
+    "lexicon.save": [
+      "js/api.js",
+      "js/connected-features.js"
+    ],
+    "manifest": [
+      "js/book-studio.js"
+    ],
+    "nodes.delete": [
+      "js/book-studio.js",
+      "js/connected-features.js"
+    ],
+    "nodes.get": [
+      "js/book-studio.js",
+      "js/connected-features.js"
+    ],
+    "nodes.list": [
+      "js/feature-hubs.js",
+      "js/book-studio.js",
+      "js/connected-features.js"
+    ],
+    "nodes.move": [
+      "js/connected-features.js"
+    ],
+    "nodes.restore": [
+      "js/connected-features.js"
+    ],
+    "nodes.save": [
+      "js/api.js",
+      "js/book-studio.js"
+    ],
+    "notes.delete": [
+      "js/connected-features.js"
+    ],
+    "notes.folders.create": [
+      "js/connected-features.js"
+    ],
+    "notes.folders.delete": [
+      "js/connected-features.js"
+    ],
+    "notes.folders.list": [
+      "js/connected-features.js"
+    ],
+    "notes.folders.update": [
+      "js/connected-features.js"
+    ],
+    "notes.get": [
+      "js/connected-features.js"
+    ],
+    "notes.list": [
+      "js/connected-features.js"
+    ],
+    "notes.quickcapture": [
+      "js/connected-features.js"
+    ],
+    "notes.recentlydeleted": [
+      "js/connected-features.js"
+    ],
+    "notes.restore": [
+      "js/connected-features.js"
+    ],
+    "notes.save": [
+      "js/api.js",
+      "js/connected-features.js"
+    ],
+    "notes.search": [
+      "js/connected-features.js"
+    ],
+    "notes.tags.list": [
+      "js/connected-features.js"
+    ],
+    "outline.generate": [
+      "js/connected-features.js"
+    ],
+    "plotissues.action": [
+      "js/connected-features.js"
+    ],
+    "plotissues.applyfix": [
+      "js/connected-features.js"
+    ],
+    "plotissues.delete": [
+      "js/connected-features.js"
+    ],
+    "plotissues.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "plotissues.resolve": [
+      "js/connected-features.js"
+    ],
+    "plotissues.save": [
+      "js/api.js",
+      "js/connected-features.js"
+    ],
+    "plotissues.scan": [
+      "js/connected-features.js"
+    ],
+    "profile.get": [
+      "js/connected-features.js"
+    ],
+    "profile.update": [
+      "js/connected-features.js"
+    ],
+    "projects.archive": [
+      "js/connected-features.js"
+    ],
+    "projects.create": [
+      "js/api.js",
+      "js/art-studio-backend.js",
+      "js/book-studio.js"
+    ],
+    "projects.get": [
+      "js/book-studio.js",
+      "js/connected-features.js"
+    ],
+    "projects.list": [
+      "js/book-studio.js",
+      "js/connected-features.js"
+    ],
+    "projects.relations.delete": [
+      "js/connected-features.js"
+    ],
+    "projects.relations.list": [
+      "js/connected-features.js"
+    ],
+    "projects.relations.save": [
+      "js/connected-features.js"
+    ],
+    "projects.restore": [
+      "js/connected-features.js"
+    ],
+    "projects.switch": [
+      "js/connected-features.js"
+    ],
+    "projects.update": [
+      "js/api.js",
+      "js/book-studio.js",
+      "js/connected-features.js"
+    ],
+    "projects.workspace": [
+      "js/connected-features.js"
+    ],
+    "reading.state.get": [
+      "js/connected-features.js"
+    ],
+    "reading.state.save": [
+      "js/connected-features.js"
+    ],
+    "revisions.get": [
+      "js/connected-features.js"
+    ],
+    "revisions.list": [
+      "js/connected-features.js"
+    ],
+    "search.global": [
+      "js/connected-features.js"
+    ],
+    "search.saved.delete": [
+      "js/connected-features.js"
+    ],
+    "search.saved.list": [
+      "js/connected-features.js"
+    ],
+    "search.saved.save": [
+      "js/connected-features.js"
+    ],
+    "settings.get": [
+      "js/connected-features.js"
+    ],
+    "settings.update": [
+      "js/app.js",
+      "js/connected-features.js"
+    ],
+    "story.causes.delete": [
+      "js/connected-features.js"
+    ],
+    "story.causes.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "story.causes.save": [
+      "js/connected-features.js"
+    ],
+    "story.debug.state": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "story.extract": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "story.facts.delete": [
+      "js/connected-features.js"
+    ],
+    "story.facts.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "story.facts.save": [
+      "js/connected-features.js"
+    ],
+    "story.knowledge.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "story.knowledge.save": [
+      "js/connected-features.js"
+    ],
+    "story.mentions.delete": [
+      "js/connected-features.js"
+    ],
+    "story.mentions.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "story.rules.delete": [
+      "js/connected-features.js"
+    ],
+    "story.rules.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "story.rules.save": [
+      "js/connected-features.js"
+    ],
+    "story.threads.delete": [
+      "js/connected-features.js"
+    ],
+    "story.threads.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "story.threads.save": [
+      "js/connected-features.js"
+    ],
+    "timeline.delete": [
+      "js/connected-features.js"
+    ],
+    "timeline.list": [
+      "js/feature-hubs.js",
+      "js/connected-features.js"
+    ],
+    "timeline.save": [
+      "js/api.js",
+      "js/connected-features.js"
+    ],
+    "trash.list": [
+      "js/connected-features.js"
+    ]
+  },
+  "actionGroups": {
+    "activity": [
+      "activity.list"
+    ],
+    "ai": [
+      "ai.jobs.list",
+      "ai.request"
+    ],
+    "art": [
+      "art.ai.generate",
+      "art.asset.upload",
+      "art.delete",
+      "art.get",
+      "art.list",
+      "art.save"
+    ],
+    "attachments": [
+      "attachments.delete",
+      "attachments.list",
+      "attachments.upload"
+    ],
+    "auth": [
+      "auth.2fa.disable",
+      "auth.2fa.enable",
+      "auth.2fa.resend",
+      "auth.2fa.status",
+      "auth.2fa.verify",
+      "auth.contact.code.verify",
+      "auth.google",
+      "auth.google.link",
+      "auth.login",
+      "auth.logout",
+      "auth.me",
+      "auth.password.change",
+      "auth.password.reset.complete",
+      "auth.password.reset.request",
+      "auth.recovery.code.login",
+      "auth.recovery.codes.generate",
+      "auth.recovery.contacts.add",
+      "auth.recovery.contacts.list",
+      "auth.recovery.contacts.remove",
+      "auth.recovery.contacts.sendcode",
+      "auth.register",
+      "auth.sessions.list",
+      "auth.sessions.revoke",
+      "auth.sessions.revoke.others"
+    ],
+    "backup": [
+      "backup.create"
+    ],
+    "books": [
+      "books.chapters.format",
+      "books.chapters.list",
+      "books.chapters.save",
+      "books.cover.spec",
+      "books.delete",
+      "books.editions.delete",
+      "books.editions.list",
+      "books.editions.save",
+      "books.export.html",
+      "books.formats",
+      "books.get",
+      "books.list",
+      "books.save"
+    ],
+    "bulk": [
+      "bulk.apply"
+    ],
+    "characters": [
+      "characters.search"
+    ],
+    "client": [
+      "client.config"
+    ],
+    "consolidation": [
+      "consolidation.apply",
+      "consolidation.plan"
+    ],
+    "drive": [
+      "drive.link.revoke",
+      "drive.link.setroot",
+      "drive.link.start",
+      "drive.link.status"
+    ],
+    "editor": [
+      "editor.run",
+      "editor.runs.list"
+    ],
+    "entities": [
+      "entities.delete",
+      "entities.get",
+      "entities.list",
+      "entities.save"
+    ],
+    "export": [
+      "export.project",
+      "export.user"
+    ],
+    "files": [
+      "files.index.get",
+      "files.index.list",
+      "files.ingest",
+      "files.ingest.batch"
+    ],
+    "health": [
+      "health"
+    ],
+    "imports": [
+      "imports.list",
+      "imports.register"
+    ],
+    "languages": [
+      "languages.delete",
+      "languages.dictionary.export",
+      "languages.generate",
+      "languages.get",
+      "languages.list",
+      "languages.save"
+    ],
+    "lexicon": [
+      "lexicon.delete",
+      "lexicon.list",
+      "lexicon.save"
+    ],
+    "manifest": [
+      "manifest"
+    ],
+    "nodes": [
+      "nodes.delete",
+      "nodes.get",
+      "nodes.list",
+      "nodes.move",
+      "nodes.restore",
+      "nodes.save"
+    ],
+    "notes": [
+      "notes.delete",
+      "notes.folders.create",
+      "notes.folders.delete",
+      "notes.folders.list",
+      "notes.folders.update",
+      "notes.get",
+      "notes.list",
+      "notes.quickcapture",
+      "notes.recentlydeleted",
+      "notes.restore",
+      "notes.save",
+      "notes.search",
+      "notes.tags.list"
+    ],
+    "outline": [
+      "outline.generate"
+    ],
+    "plotissues": [
+      "plotissues.action",
+      "plotissues.applyfix",
+      "plotissues.delete",
+      "plotissues.list",
+      "plotissues.resolve",
+      "plotissues.save",
+      "plotissues.scan"
+    ],
+    "profile": [
+      "profile.get",
+      "profile.update"
+    ],
+    "projects": [
+      "projects.archive",
+      "projects.create",
+      "projects.get",
+      "projects.list",
+      "projects.relations.delete",
+      "projects.relations.list",
+      "projects.relations.save",
+      "projects.restore",
+      "projects.switch",
+      "projects.update",
+      "projects.workspace"
+    ],
+    "reading": [
+      "reading.state.get",
+      "reading.state.save"
+    ],
+    "revisions": [
+      "revisions.get",
+      "revisions.list"
+    ],
+    "search": [
+      "search.global",
+      "search.saved.delete",
+      "search.saved.list",
+      "search.saved.save"
+    ],
+    "settings": [
+      "settings.get",
+      "settings.update"
+    ],
+    "story": [
+      "story.causes.delete",
+      "story.causes.list",
+      "story.causes.save",
+      "story.debug.state",
+      "story.extract",
+      "story.facts.delete",
+      "story.facts.list",
+      "story.facts.save",
+      "story.knowledge.list",
+      "story.knowledge.save",
+      "story.mentions.delete",
+      "story.mentions.list",
+      "story.rules.delete",
+      "story.rules.list",
+      "story.rules.save",
+      "story.threads.delete",
+      "story.threads.list",
+      "story.threads.save"
+    ],
+    "timeline": [
+      "timeline.delete",
+      "timeline.list",
+      "timeline.save"
+    ],
+    "trash": [
+      "trash.list"
+    ]
+  },
+  "artStudioAi": {
+    "brushTools": {
+      "paint": true,
+      "pencil": true,
+      "ink": true,
+      "marker": true,
+      "crayon": true,
+      "charcoal": true,
+      "calligraphy": true,
+      "neon": true,
+      "spray": true,
+      "graffiti": true,
+      "pixel": true,
+      "eraser": true
+    },
+    "shapeTools": {
+      "rect": true,
+      "ellipse": true,
+      "roundrect": true,
+      "triangle": true,
+      "diamond": true,
+      "star": true,
+      "polygon": true,
+      "cloud": true,
+      "burst": true,
+      "moon": true,
+      "plant": true,
+      "cube": true,
+      "heart": true,
+      "arrow": true,
+      "speech": true,
+      "line": true
+    },
+    "operations": {
+      "clear": true,
+      "background": true,
+      "shape": true,
+      "text": true,
+      "texture": true,
+      "pattern": true,
+      "stroke": true,
+      "fill": true,
+      "gradient": true,
+      "sample": true,
+      "select": true,
+      "layer": true,
+      "transform": true,
+      "filter": true,
+      "duplicate": true,
+      "delete": true,
+      "layerup": true,
+      "layerdown": true
+    },
+    "structuredAiPlan": true,
+    "editableLayerExecution": true
+  },
+  "principles": [
+    "Creative UI uses human-facing labels and forms; service action identifiers remain internal.",
+    "Project-aware operations resolve the active project before connected calls.",
+    "Cover AI executes editable studio operations instead of flattening tool-directed compositions.",
+    "The tutorial is the intentionally detailed in-app explanation surface."
+  ]
+}

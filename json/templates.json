@@ -91,6 +91,137 @@
       ]
     },
     {
+      "id": "film_tv",
+      "name": "Film / television series",
+      "starterFolders": [
+        "Series Guide",
+        "Episodes",
+        "Scenes",
+        "Characters",
+        "Locations",
+        "Continuity",
+        "Research"
+      ]
+    },
+    {
+      "id": "podcast",
+      "name": "Audio drama / podcast",
+      "starterFolders": [
+        "Series Plan",
+        "Episodes",
+        "Scripts",
+        "Characters",
+        "Sound Notes",
+        "Research",
+        "Continuity"
+      ]
+    },
+    {
+      "id": "comic",
+      "name": "Comic / graphic narrative",
+      "starterFolders": [
+        "Series Plan",
+        "Issues",
+        "Scripts",
+        "Characters",
+        "Locations",
+        "Art Notes",
+        "Continuity",
+        "Research"
+      ]
+    },
+    {
+      "id": "transmedia",
+      "name": "Multi-platform / transmedia world",
+      "starterFolders": [
+        "World Canon",
+        "Master Timeline",
+        "Books",
+        "Games",
+        "TTRPG",
+        "MMORPG",
+        "Screen",
+        "Audio",
+        "Characters",
+        "Factions",
+        "Continuity",
+        "Research"
+      ]
+    },
+    {
+      "id": "mmorpg",
+      "name": "MMORPG world & narrative",
+      "starterFolders": [
+        "World",
+        "Eras",
+        "Regions",
+        "Factions",
+        "Characters",
+        "Quests",
+        "Dungeons",
+        "Items",
+        "Systems",
+        "Timeline",
+        "Lore",
+        "Research"
+      ]
+    },
+    {
+      "id": "video_game",
+      "name": "Video game narrative",
+      "starterFolders": [
+        "Narrative Design",
+        "Quests",
+        "Characters",
+        "World",
+        "Dialogue",
+        "Systems",
+        "Timeline",
+        "Research"
+      ]
+    },
+    {
+      "id": "visual_novel",
+      "name": "Visual novel / interactive fiction",
+      "starterFolders": [
+        "Premise",
+        "Routes",
+        "Scenes",
+        "Characters",
+        "World",
+        "Variables",
+        "Endings",
+        "Research"
+      ]
+    },
+    {
+      "id": "anthology",
+      "name": "Anthology / collection",
+      "starterFolders": [
+        "Collection Plan",
+        "Works",
+        "Contributors",
+        "Continuity",
+        "Research",
+        "Publishing"
+      ]
+    },
+    {
+      "id": "book",
+      "name": "Book / standalone long-form",
+      "starterFolders": [
+        "Premise",
+        "Manuscript",
+        "Outline",
+        "Characters",
+        "World",
+        "Timeline",
+        "Research",
+        "Continuity",
+        "Publishing"
+      ]
+    },
+    {
       "id": "other",
       "name": "Other",
       "starterFolders": [

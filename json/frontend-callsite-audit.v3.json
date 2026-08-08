@@ -1,0 +1,1992 @@
+{
+  "schema": "literaryfriend.frontend-callsite-audit.v3",
+  "callableActions": 156,
+  "actionsWithFrontendCallsites": 156,
+  "missing": [],
+  "actions": [
+    {
+      "action": "activity.list",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 145
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "action": "ai.jobs.list",
+      "surface": "assistant",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 131
+        }
+      ]
+    },
+    {
+      "action": "ai.request",
+      "surface": "assistant",
+      "callsites": [
+        {
+          "file": "js/art-ai-director.js",
+          "line": 177
+        },
+        {
+          "file": "js/art-studio-backend.js",
+          "line": 120
+        }
+      ]
+    },
+    {
+      "action": "art.ai.generate",
+      "surface": "artstudio",
+      "callsites": [
+        {
+          "file": "js/art-studio-backend.js",
+          "line": 130
+        }
+      ]
+    },
+    {
+      "action": "art.asset.upload",
+      "surface": "artstudio",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "action": "art.delete",
+      "surface": "artstudio",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "action": "art.get",
+      "surface": "artstudio",
+      "callsites": [
+        {
+          "file": "js/art-studio-backend.js",
+          "line": 98
+        },
+        {
+          "file": "js/assistant.js",
+          "line": 44
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "action": "art.list",
+      "surface": "artstudio",
+      "callsites": [
+        {
+          "file": "js/art-studio-backend.js",
+          "line": 94
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 155
+        }
+      ]
+    },
+    {
+      "action": "art.save",
+      "surface": "artstudio",
+      "callsites": [
+        {
+          "file": "js/art-studio-backend.js",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "action": "attachments.delete",
+      "surface": "research",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "action": "attachments.list",
+      "surface": "research",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "action": "attachments.upload",
+      "surface": "research",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 86
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "action": "auth.2fa.disable",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "action": "auth.2fa.enable",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "action": "auth.2fa.resend",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/login.js",
+          "line": 134
+        }
+      ]
+    },
+    {
+      "action": "auth.2fa.status",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 145
+        }
+      ]
+    },
+    {
+      "action": "auth.2fa.verify",
+      "surface": "identity",
+      "callsites": [
+        {
+          "file": "js/login.js",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "action": "auth.contact.code.verify",
+      "surface": "identity",
+      "callsites": [
+        {
+          "file": "js/app.js",
+          "line": 212
+        },
+        {
+          "file": "js/login.js",
+          "line": 125
+        }
+      ]
+    },
+    {
+      "action": "auth.google",
+      "surface": "identity",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 144
+        },
+        {
+          "file": "js/login.js",
+          "line": 181
+        }
+      ]
+    },
+    {
+      "action": "auth.google.link",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 144
+        }
+      ]
+    },
+    {
+      "action": "auth.login",
+      "surface": "identity",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 20
+        },
+        {
+          "file": "js/login.js",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "action": "auth.logout",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "action": "auth.me",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 22
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1381
+        }
+      ]
+    },
+    {
+      "action": "auth.password.change",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/app.js",
+          "line": 214
+        }
+      ]
+    },
+    {
+      "action": "auth.password.reset.complete",
+      "surface": "identity",
+      "callsites": [
+        {
+          "file": "js/login.js",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "action": "auth.password.reset.request",
+      "surface": "identity",
+      "callsites": [
+        {
+          "file": "js/login.js",
+          "line": 142
+        }
+      ]
+    },
+    {
+      "action": "auth.recovery.code.login",
+      "surface": "identity",
+      "callsites": [
+        {
+          "file": "js/login.js",
+          "line": 159
+        }
+      ]
+    },
+    {
+      "action": "auth.recovery.codes.generate",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/app.js",
+          "line": 213
+        }
+      ]
+    },
+    {
+      "action": "auth.recovery.contacts.add",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/app.js",
+          "line": 210
+        },
+        {
+          "file": "js/login.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "action": "auth.recovery.contacts.list",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/app.js",
+          "line": 209
+        },
+        {
+          "file": "js/login.js",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "action": "auth.recovery.contacts.remove",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/app.js",
+          "line": 212
+        }
+      ]
+    },
+    {
+      "action": "auth.recovery.contacts.sendcode",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/app.js",
+          "line": 212
+        }
+      ]
+    },
+    {
+      "action": "auth.register",
+      "surface": "identity",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 21
+        },
+        {
+          "file": "js/login.js",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "action": "auth.sessions.list",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/app.js",
+          "line": 209
+        }
+      ]
+    },
+    {
+      "action": "auth.sessions.revoke",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/app.js",
+          "line": 212
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "action": "auth.sessions.revoke.others",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "action": "backup.create",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 86
+        }
+      ]
+    },
+    {
+      "action": "books.chapters.format",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "action": "books.chapters.list",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "action": "books.chapters.save",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "action": "books.cover.spec",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "action": "books.delete",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "action": "books.editions.delete",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "action": "books.editions.list",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 138
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "action": "books.editions.save",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "action": "books.export.html",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 140
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 87
+        }
+      ]
+    },
+    {
+      "action": "books.formats",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 138
+        }
+      ]
+    },
+    {
+      "action": "books.get",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "action": "books.list",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 138
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "action": "books.save",
+      "surface": "bookbuilder",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 140
+        }
+      ]
+    },
+    {
+      "action": "bulk.apply",
+      "surface": "consolidate",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 109
+        }
+      ]
+    },
+    {
+      "action": "characters.search",
+      "surface": "characters",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "action": "client.config",
+      "surface": "identity",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 144
+        },
+        {
+          "file": "js/login.js",
+          "line": 177
+        }
+      ]
+    },
+    {
+      "action": "consolidation.apply",
+      "surface": "consolidate",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 110
+        }
+      ]
+    },
+    {
+      "action": "consolidation.plan",
+      "surface": "consolidate",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 110
+        }
+      ]
+    },
+    {
+      "action": "drive.link.revoke",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "action": "drive.link.setroot",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "action": "drive.link.start",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "action": "drive.link.status",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 145
+        }
+      ]
+    },
+    {
+      "action": "editor.run",
+      "surface": "revision",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 126
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 128
+        }
+      ]
+    },
+    {
+      "action": "editor.runs.list",
+      "surface": "revision",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 126
+        }
+      ]
+    },
+    {
+      "action": "entities.delete",
+      "surface": "world",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "action": "entities.get",
+      "surface": "world",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "action": "entities.list",
+      "surface": "world",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 78
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 87
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 96
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 109
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "action": "entities.save",
+      "surface": "world",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 51
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 90
+        }
+      ]
+    },
+    {
+      "action": "export.project",
+      "surface": "publish",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 85
+        }
+      ]
+    },
+    {
+      "action": "export.user",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "action": "files.index.get",
+      "surface": "consolidate",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 108
+        }
+      ]
+    },
+    {
+      "action": "files.index.list",
+      "surface": "consolidate",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 104
+        }
+      ]
+    },
+    {
+      "action": "files.ingest",
+      "surface": "consolidate",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 106
+        }
+      ]
+    },
+    {
+      "action": "files.ingest.batch",
+      "surface": "consolidate",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 106
+        }
+      ]
+    },
+    {
+      "action": "health",
+      "surface": "app",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 19
+        },
+        {
+          "file": "js/art-studio-app.js",
+          "line": 18
+        },
+        {
+          "file": "js/art-studio-app.js",
+          "line": 165
+        },
+        {
+          "file": "js/art-studio-app.js",
+          "line": 166
+        },
+        {
+          "file": "js/art-studio-app.js",
+          "line": 167
+        },
+        {
+          "file": "js/art-studio-app.js",
+          "line": 188
+        },
+        {
+          "file": "js/art-studio-app.js",
+          "line": 191
+        },
+        {
+          "file": "js/art-studio-backend.js",
+          "line": 47
+        },
+        {
+          "file": "js/art-studio-config.js",
+          "line": 20
+        },
+        {
+          "file": "js/art-studio-embed.js",
+          "line": 333
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "action": "imports.list",
+      "surface": "consolidate",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 104
+        }
+      ]
+    },
+    {
+      "action": "imports.register",
+      "surface": "consolidate",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 107
+        }
+      ]
+    },
+    {
+      "action": "languages.delete",
+      "surface": "language",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "action": "languages.dictionary.export",
+      "surface": "language",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "action": "languages.generate",
+      "surface": "language",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "action": "languages.get",
+      "surface": "language",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "action": "languages.list",
+      "surface": "language",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 120
+        }
+      ]
+    },
+    {
+      "action": "languages.save",
+      "surface": "language",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "action": "lexicon.delete",
+      "surface": "language",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "action": "lexicon.list",
+      "surface": "language",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 120
+        }
+      ]
+    },
+    {
+      "action": "lexicon.save",
+      "surface": "language",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 64
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "action": "manifest",
+      "surface": "app",
+      "callsites": [
+        {
+          "file": "js/book-studio.js",
+          "line": 33
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 180
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 330
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 344
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 372
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1486
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1487
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1488
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1489
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1490
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1493
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1496
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1499
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1500
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1501
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1502
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1504
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1505
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1506
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1507
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1557
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1558
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1559
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1560
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1561
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1562
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1593
+        }
+      ]
+    },
+    {
+      "action": "nodes.delete",
+      "surface": "manuscript",
+      "callsites": [
+        {
+          "file": "js/book-studio.js",
+          "line": 1482
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "action": "nodes.get",
+      "surface": "manuscript",
+      "callsites": [
+        {
+          "file": "js/book-studio.js",
+          "line": 1614
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "action": "nodes.list",
+      "surface": "manuscript",
+      "callsites": [
+        {
+          "file": "js/book-studio.js",
+          "line": 1553
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 60
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 78
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 87
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 109
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 126
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 140
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 38
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "action": "nodes.move",
+      "surface": "manuscript",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 63
+        }
+      ]
+    },
+    {
+      "action": "nodes.restore",
+      "surface": "manuscript",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "action": "nodes.save",
+      "surface": "manuscript",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 34
+        },
+        {
+          "file": "js/api.js",
+          "line": 37
+        },
+        {
+          "file": "js/api.js",
+          "line": 41
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1474
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1505
+        }
+      ]
+    },
+    {
+      "action": "notes.delete",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "action": "notes.folders.create",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "action": "notes.folders.delete",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "action": "notes.folders.list",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "action": "notes.folders.update",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "action": "notes.get",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "action": "notes.list",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "action": "notes.quickcapture",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "action": "notes.recentlydeleted",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "action": "notes.restore",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 69
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "action": "notes.save",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 44
+        },
+        {
+          "file": "js/api.js",
+          "line": 47
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "action": "notes.search",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "action": "notes.tags.list",
+      "surface": "notes",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "action": "outline.generate",
+      "surface": "outline",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "action": "plotissues.action",
+      "surface": "continuity",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "action": "plotissues.applyfix",
+      "surface": "continuity",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "action": "plotissues.delete",
+      "surface": "continuity",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "action": "plotissues.list",
+      "surface": "continuity",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 113
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "action": "plotissues.resolve",
+      "surface": "continuity",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "action": "plotissues.save",
+      "surface": "continuity",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 57
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 115
+        }
+      ]
+    },
+    {
+      "action": "plotissues.scan",
+      "surface": "continuity",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "action": "profile.get",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 145
+        }
+      ]
+    },
+    {
+      "action": "profile.update",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "action": "projects.archive",
+      "surface": "projects",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "action": "projects.create",
+      "surface": "projects",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 31
+        },
+        {
+          "file": "js/art-studio-backend.js",
+          "line": 58
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1431
+        }
+      ]
+    },
+    {
+      "action": "projects.get",
+      "surface": "projects",
+      "callsites": [
+        {
+          "file": "js/book-studio.js",
+          "line": 1549
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "action": "projects.list",
+      "surface": "projects",
+      "callsites": [
+        {
+          "file": "js/book-studio.js",
+          "line": 1407
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "action": "projects.relations.delete",
+      "surface": "projects",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "action": "projects.relations.list",
+      "surface": "projects",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 50
+        }
+      ]
+    },
+    {
+      "action": "projects.relations.save",
+      "surface": "projects",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 54
+        }
+      ]
+    },
+    {
+      "action": "projects.restore",
+      "surface": "projects",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "action": "projects.switch",
+      "surface": "projects",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "action": "projects.update",
+      "surface": "projects",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 31
+        },
+        {
+          "file": "js/book-studio.js",
+          "line": 1443
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "action": "projects.workspace",
+      "surface": "home",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "action": "reading.state.get",
+      "surface": "manuscript",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "action": "reading.state.save",
+      "surface": "manuscript",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "action": "revisions.get",
+      "surface": "trash",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "action": "revisions.list",
+      "surface": "trash",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "action": "search.global",
+      "surface": "search",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 134
+        }
+      ]
+    },
+    {
+      "action": "search.saved.delete",
+      "surface": "search",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 134
+        }
+      ]
+    },
+    {
+      "action": "search.saved.list",
+      "surface": "search",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 134
+        }
+      ]
+    },
+    {
+      "action": "search.saved.save",
+      "surface": "search",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 134
+        }
+      ]
+    },
+    {
+      "action": "settings.get",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 145
+        }
+      ]
+    },
+    {
+      "action": "settings.update",
+      "surface": "account",
+      "callsites": [
+        {
+          "file": "js/app.js",
+          "line": 36
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 147
+        }
+      ]
+    },
+    {
+      "action": "story.causes.delete",
+      "surface": "world",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "action": "story.causes.list",
+      "surface": "world",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 87
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "action": "story.causes.save",
+      "surface": "world",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "action": "story.debug.state",
+      "surface": "manuscript",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 60
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 62
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "action": "story.extract",
+      "surface": "manuscript",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 62
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "action": "story.facts.delete",
+      "surface": "characters",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "action": "story.facts.list",
+      "surface": "characters",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 78
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "action": "story.facts.save",
+      "surface": "characters",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "action": "story.knowledge.list",
+      "surface": "characters",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 78
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "action": "story.knowledge.save",
+      "surface": "characters",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "action": "story.mentions.delete",
+      "surface": "characters",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "action": "story.mentions.list",
+      "surface": "characters",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 78
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "action": "story.rules.delete",
+      "surface": "world",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "action": "story.rules.list",
+      "surface": "world",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 87
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 109
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "action": "story.rules.save",
+      "surface": "world",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 91
+        }
+      ]
+    },
+    {
+      "action": "story.threads.delete",
+      "surface": "outline",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "action": "story.threads.list",
+      "surface": "outline",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 72
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 87
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 109
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "action": "story.threads.save",
+      "surface": "outline",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "action": "timeline.delete",
+      "surface": "timeline",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 98
+        }
+      ]
+    },
+    {
+      "action": "timeline.list",
+      "surface": "timeline",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 78
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 87
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 96
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 109
+        },
+        {
+          "file": "js/feature-hubs.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "action": "timeline.save",
+      "surface": "timeline",
+      "callsites": [
+        {
+          "file": "js/api.js",
+          "line": 54
+        },
+        {
+          "file": "js/connected-features.js",
+          "line": 98
+        }
+      ]
+    },
+    {
+      "action": "trash.list",
+      "surface": "trash",
+      "callsites": [
+        {
+          "file": "js/connected-features.js",
+          "line": 151
+        }
+      ]
+    }
+  ]
+}

@@ -1,76 +1,66 @@
 # LiteraryFriend — Version 1
 
-LiteraryFriend Version 1 is a free-to-use, local-first literary creation and organization workspace. It consolidates the three supplied Version 1 frontends into one application shell with one entry point: `index.html`.
+**Project Compiled by William Saville AKA The Transgender T-Rex #TheTransgenderTRex**
 
-Project Compiled by William Saville AKA The Transgender T-Rex #TheTransgenderTRex
+LiteraryFriend is a free-to-use, local-first story creation, writing, editing, worldbuilding, organization, book-building, and art workspace. Open `index.html` directly in a modern browser. The application has one main HTML entry point and keeps its program resources in shallow companion folders.
 
-## Open it
+## Main workflow
 
-Open `index.html` directly in a modern browser. No build step, package manager, framework server, paid API, or account is required for the local writing tools. Local data is stored in the browser. The supplied backend can be enabled for account/cloud features.
+1. Start from the four-choice access screen: Download app, Sign in, Sign up, or Skip login. Sign-in/sign-up fields and Google account access appear only after the matching choice; Skip login enters the workspace immediately in local mode.
+2. Create or choose a project. Projects are isolated from one another and can be switched from the top bar.
+3. Build the project with Manuscript, Outline, Story Intelligence, Characters, World & Lore, Timeline, Research, Plot Holes & Continuity, Languages, Revision, Literary Assistant, Organizer, Book Builder, Art Studio, and Publish.
+4. Import files through Import & Merge. Writing files are sorted into the manuscript; PDFs and other source/reference files are sorted into Research and preserved as attachments.
+5. Consolidate alternate versions of a document and mass-update canonical names or terminology across the active project.
+6. Use Revision Lab and the specialized editor tools for editing assistance, coordinate work in Organizer, then use Book Builder, Art Studio, and Publish for print, interactive HTML/JSON editions, project packages, and backups.
 
-The application is intentionally packaged with only these top-level folders:
+## Story formats
 
-```text
-index.html
-js/
-css/
-json/
-assets/
-  audio/
-  images/
-docs/
-backend/
-```
+Projects can represent novels, standalone books, series, short stories, anthologies, screenplays, film/television series, comics, audio drama/podcasts, poetry, nonfiction, TTRPG writing, video-game narrative, visual novels/interactive fiction, MMORPG worlds, and multi-platform/transmedia worlds. A single project can hold shared canon for related works across different media and eras.
 
-## Consolidated workspaces
+## Project organization
 
-- Writer Desktop dashboard and project organization
-- manuscript/chapter/scene editor with autosave, formatting, read-aloud, dictation support, focus tools, snapshots, tags, links, and attachments
-- notes and journal, folders, quick capture, research, outline, characters, world/lore, timeline, continuity/plot issues, constructed languages and lexicon, revision analysis, recently deleted items, global local search
-- Literary Assistant with deterministic analysis plus a large, lazy-loaded local literary/specialist corpus; it can assemble project-aware prompts without requiring a paid AI service or pretending the retrieval corpus itself is a language model
-- Book Builder with trim presets, page design, cover setup, JSON page import, paper textures, reader mode, local page-turn mode, page audio, local drafts, and export
-- Art Studio for book covers and book art with trim/bleed/spine tools, text/image/shape/paint layers, effects, local project files, prompt refinement, and a free local concept-art generator
-- Cloud & Account control center that exposes the capabilities already present in the supplied Apps Script backend, without adding backend routes
-- Documentation viewer inside the app for this README, license/attribution notes, source map, backend capability notes, and audit
+Every manuscript document, note, outline beat, character, world entry, timeline event, research item, plot/continuity issue, constructed language, and lexicon entry is associated with its project. Switching projects changes the working context instead of mixing unrelated material together.
 
-## Backend — used as supplied
+## Import and consolidation
 
-Web app endpoint:
-`https://script.google.com/macros/s/AKfycbxs5m-v5PQt2LZHO9T-OEckMim_jVDtvOgGeQJzR_bQ34FhbHvMFWssi1GQnBnWosXM/exec`
+Import & Merge accepts DOCX, JSON, PDF, TXT, Markdown, HTML, RTF, CSV/TSV, XML/YAML, common image/audio/video formats, and common ebook/reference formats. DOCX text is extracted locally when the browser supports native decompression; the original DOCX is also preserved. PDFs and media files remain attached to Research items.
 
-Apps Script library reference:
-`https://script.google.com/macros/library/d/1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD/1`
+Version consolidation groups related filenames that differ by markers such as draft, revised, final, copy, version numbers, dates, or numbered duplicates. The consolidation tool uses the largest version as a base and recovers substantially unique passages from alternate versions. LiteraryFriend export packages can also be merged into the active matching project, combining matching records while keeping unrelated projects separate. Mass Update then applies deliberate find-and-replace rules across editable records in the active project.
 
-`backend/LiteraryFriend_Backend.gs` is the supplied backend source and is kept unchanged. The frontend is written against its existing action contract. The app does not require a replacement backend.
+## Writing and editing
 
-## Backend capability coverage
+The manuscript supports chapters, scenes, freeform documents, drag-to-reorder, autosave, snapshots, attachments, read aloud, dictation where supported, formatting, find/replace, tags, and chapter-wide formatting. Revision Lab analyzes readability, repetition, weak-phrase candidates, sentence rhythm, possible passive constructions, dialogue balance, and sensory-language signals.
 
-The supplied backend reports support for accounts, password authentication, Google sign-in, multi-device sessions, multiple recovery email/phone contacts, one-time recovery codes, email password reset, optional SMS webhook integration, projects/directories, notes/folders/tags, attachments, imports, exports, backup, global search, plot issue tracking, timelines, entities, fantasy languages/lexicon, read-aloud state, trash, and audit/activity history. The Cloud & Account view gives direct access to these existing routes, while the normal workspaces sync their matching local record types.
+Plot Holes & Continuity can scan the project for concrete warning signs, track manual story issues, link an issue to an exact manuscript excerpt, highlight the excerpt in the editor, and apply a saved replacement when the fix is explicit.
 
-Some public authentication flows such as Google sign-in still depend on the deployment being configured with the corresponding backend/provider settings. LiteraryFriend does not fabricate a local substitute for a server capability.
+Literary Assistant searches the bundled literary/specialist corpus and builds project-aware writing prompts. AI Editor uses an on-device browser language model when available and otherwise falls back to LiteraryFriend's local editing analysis, keeping the feature free to use.
 
-## Direct-file compatibility
+## Story intelligence and editor specialties
 
-Large literary corpus JSON was converted into lazy JavaScript data packs so assistant search can work when the app is opened as `file://.../index.html`. Templates also have a bundled JavaScript copy. The Book Builder uses its included local reader mode and does not require an external page-turn CDN.
+Story Intelligence connects prose to canon instead of treating the manuscript as a flat block of text. It provides provenance-aware facts, temporal state, character knowledge and belief, world chronology, narrative order, reader-revelation order, plot-thread lifecycle, setup/payoff links, causal relationships, world rules, a Scene × thread Matrix, character-view evidence, and an evidence-based Issue Center. The scene debugger can inspect the story state around a selected writing node.
 
-Google Fonts is the only optional visual network request: if unavailable, the `LiteraryFriend` wordmark falls back to a script font stack. Application functionality does not depend on the font service.
+Revision work can be separated by purpose through continuity, plot, character, world, timeline, developmental, line, copy, POV, and series-focused analysis so a factual contradiction does not get mixed together with subjective editorial advice.
 
-## Responsive layout
+## Organizer and publishing
 
-Desktop keeps the full two-column early-2000s workspace. Landscape tablets retain a compact desktop layout. Smaller tablets/phones use the same desktop-inspired controls with a collapsible navigation drawer, touch-sized controls, and safe overflow rather than switching to a separate mobile application.
+Organizer keeps project-scoped tasks, priorities, status, reminders, categories, notes, and filters beside the writing. Publish can create project packages, interactive HTML/JSON book editions, saved backups, and activity-backed handoffs without requiring a second publishing project.
 
-## Brand rules
+## AI-assisted cover creation
 
-Only the literal displayed word `LiteraryFriend` uses Updock. The rest of the UI, book pages, editor, Art Studio controls, and documentation use normal system/reading fonts. The app follows the supplied cyan-centered green–blue palette and high-contrast text pairings.
+Art Studio keeps AI image generation and editable design tools in the same cover workflow. The AI tool composer can create or decorate an editable cover using paint, pencil, ink, marker, crayon, charcoal, calligraphy, neon, spray, graffiti, pixel drawing, erasing, shapes, editable text and typography, gradients, textures, patterns, fills, layer effects, transforms, non-destructive crop, selection, cut/copy/paste, grouping, alignment, distribution, layer front/back ordering, reusable stamps, and supported baked paint effects. It builds real editable layers rather than returning a flattened mockup, so title, author, series, art, texture, and decorative elements can still be changed by hand and returned to Book Builder.
 
-## Free-use behavior
+## Constructed languages
 
-The local app has no paywall, subscriptions, usage meter, purchase screen, or required commercial AI key. Optional backend hosting and any external service a user independently chooses are separate from the local application.
+Language Lab supports phonology, phonotactics, pronunciation, orthography, writing systems, morphology, word formation, grammar, syntax, tense/aspect/mood/evidentiality, pronouns and agreement, noun classes, numbers, naming rules, idioms, registers, dialects, historical change, and a searchable dictionary/lexicon. The starter-language builder can create a coherent rule framework and core vocabulary that remains fully editable.
 
-## Starter writing
+## Accounts and recovery
 
-The Book Builder starter uses the user-provided short stories **Freedom Changes Everything** and **The Farmer's Plea**. Retired project-specific legacy dataset material was not restored.
+The first screen contains only four access actions: Download app, Sign in, Sign up, and Skip login. Sign in reveals email/username and current-password fields; Sign up reveals display name, username, email, optional backup phone, new password, and confirmation fields. Those inputs use standard browser autocomplete values so password managers can recognize them. Google account access appears inside the expanded sign-in/sign-up flow when configured. Forgot Password exists only inside Sign in and opens a separate hidden recovery area for reset codes, a new password, and emergency recovery-code sign-in. Optional two-factor verification appears only when the account requires it after sign-in. Account settings support multiple backup email addresses and phone numbers, contact verification, one-time recovery codes, password changes, signed-in device management, and optional syncing. Skip login enters the workspace immediately and keeps local writing available without an account.
 
-## Version
+## Documentation and attribution
 
-This package remains **Version 1** because it has not been deployed.
+Docs & Licenses displays this README, the tutorial, and license/attribution notes inside the application. The same files are retained in `docs/` so redistribution does not imply exclusive ownership of third-party material, references, concepts, fonts, licenses, or upstream works.
+
+## Typography and design
+
+Only the literal displayed word **LiteraryFriend** uses the requested Updock wordmark font. Other interface text uses normal reading and system fonts. The interface follows the supplied cyan-centered lime-green / cyan / Dodger-blue design system and maintains readable contrast in light and dark presentation.

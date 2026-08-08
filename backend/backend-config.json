@@ -1,0 +1,8 @@
+{
+  "schema": "literaryfriend.backend-config.v1",
+  "webAppUrl": "https://script.google.com/macros/s/AKfycbw0lsf6upSeg1h_PD6cIyxLt1ukOfU71vRKuz3xc7-PlDbzKHFfvm4NR0c5eD1RoNNK/exec",
+  "appsScriptLibraryUrl": "https://script.google.com/macros/library/d/1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD/2",
+  "appsScriptLibraryId": "1m--huLkqouxXGKHTj2gTpV19li8tS1IO_RLEbgmy3a8wUcvljt9dlLdD",
+  "appsScriptLibraryVersion": 2,
+  "notes": "Browser clients use the deployed LiteraryFriend service layer. Technical service configuration stays outside the user-facing creative interface."
+}

@@ -1,0 +1,297 @@
+{
+  "schema": "literaryfriend/texture-presets/v2",
+  "source": "Book Studio + supplied 3D Effects Studio procedural texture concepts",
+  "presets": [
+    {
+      "id": "paper",
+      "name": "Paper Grain",
+      "density": 0.14,
+      "scale": 1,
+      "opacity": 0.22,
+      "blend": "multiply"
+    },
+    {
+      "id": "linen",
+      "name": "Linen",
+      "density": 0.22,
+      "scale": 5,
+      "opacity": 0.18,
+      "blend": "multiply"
+    },
+    {
+      "id": "canvas",
+      "name": "Canvas Weave (Classic)",
+      "density": 0.28,
+      "scale": 8,
+      "opacity": 0.2,
+      "blend": "overlay"
+    },
+    {
+      "id": "speckle",
+      "name": "Ink Speckle",
+      "density": 0.1,
+      "scale": 2,
+      "opacity": 0.28,
+      "blend": "multiply"
+    },
+    {
+      "id": "halftone",
+      "name": "Halftone",
+      "density": 0.35,
+      "scale": 7,
+      "opacity": 0.2,
+      "blend": "soft-light"
+    },
+    {
+      "id": "dust",
+      "name": "Dust",
+      "density": 0.08,
+      "scale": 3,
+      "opacity": 0.22,
+      "blend": "screen"
+    },
+    {
+      "id": "vignette",
+      "name": "Vignette",
+      "density": 0.35,
+      "scale": 1,
+      "opacity": 0.35,
+      "blend": "multiply"
+    },
+    {
+      "id": "canvas-weave",
+      "name": "Canvas Weave",
+      "category": "surface",
+      "renderer": "fiber-grid",
+      "density": 0.3,
+      "scale": 3.0,
+      "opacity": 0.21,
+      "blend": "multiply",
+      "description": "Interlaced horizontal and vertical fibers."
+    },
+    {
+      "id": "cold-press-paper",
+      "name": "Cold Press Paper",
+      "category": "surface",
+      "renderer": "paper-fiber",
+      "density": 0.48,
+      "scale": 3.6,
+      "opacity": 0.22,
+      "blend": "multiply",
+      "description": "Pebbled paper tooth with scattered fibers."
+    },
+    {
+      "id": "hot-press-paper",
+      "name": "Hot Press Paper",
+      "category": "surface",
+      "renderer": "paper-fiber",
+      "density": 0.18,
+      "scale": 2.1,
+      "opacity": 0.16,
+      "blend": "multiply",
+      "description": "Smoother paper with subtle tooth."
+    },
+    {
+      "id": "chalk-soft",
+      "name": "Soft Chalk",
+      "category": "dry media",
+      "renderer": "chalk",
+      "density": 0.72,
+      "scale": 3.0,
+      "opacity": 0.25,
+      "blend": "multiply",
+      "description": "Dusty translucent chalk with open grain."
+    },
+    {
+      "id": "chalk-dense",
+      "name": "Dense Chalk",
+      "category": "dry media",
+      "renderer": "chalk",
+      "density": 0.84,
+      "scale": 2.16,
+      "opacity": 0.3,
+      "blend": "multiply",
+      "description": "Heavier chalk buildup and visible granules."
+    },
+    {
+      "id": "marker-streak",
+      "name": "Marker Streak",
+      "category": "marker",
+      "renderer": "marker",
+      "density": 0.18,
+      "scale": 3.0,
+      "opacity": 0.26,
+      "blend": "multiply",
+      "description": "Parallel solvent-marker streaks."
+    },
+    {
+      "id": "marker-overlap",
+      "name": "Marker Overlap",
+      "category": "marker",
+      "renderer": "marker",
+      "density": 0.16,
+      "scale": 3.0,
+      "opacity": 0.29,
+      "blend": "multiply",
+      "description": "Translucent marker bands with darker overlaps and edge pooling."
+    },
+    {
+      "id": "watercolor-wash",
+      "name": "Watercolor Wash",
+      "category": "watercolor",
+      "renderer": "watercolor",
+      "density": 0.22,
+      "scale": 4.2,
+      "opacity": 0.25,
+      "blend": "multiply",
+      "description": "Soft transparent wash with uneven pigment density."
+    },
+    {
+      "id": "watercolor-bloom",
+      "name": "Watercolor Bloom",
+      "category": "watercolor",
+      "renderer": "watercolor-bloom",
+      "density": 0.26,
+      "scale": 4.5,
+      "opacity": 0.27,
+      "blend": "multiply",
+      "description": "Backrun blooms, soft cauliflowers, and dark perimeter pooling."
+    },
+    {
+      "id": "watercolor-granulation",
+      "name": "Watercolor Granulation",
+      "category": "watercolor",
+      "renderer": "watercolor-granulation",
+      "density": 0.8,
+      "scale": 2.34,
+      "opacity": 0.26,
+      "blend": "multiply",
+      "description": "Pigment settling into paper tooth."
+    },
+    {
+      "id": "acrylic-smooth",
+      "name": "Smooth Acrylic",
+      "category": "acrylic",
+      "renderer": "acrylic",
+      "density": 0.1,
+      "scale": 3.0,
+      "opacity": 0.32,
+      "blend": "overlay",
+      "description": "Opaque acrylic with subtle brush ridges."
+    },
+    {
+      "id": "acrylic-impasto",
+      "name": "Acrylic Impasto",
+      "category": "acrylic",
+      "renderer": "impasto",
+      "density": 0.58,
+      "scale": 2.1,
+      "opacity": 0.34,
+      "blend": "overlay",
+      "description": "Thick paint ridges, highlights, and troughs."
+    },
+    {
+      "id": "dry-brush",
+      "name": "Dry Brush",
+      "category": "acrylic",
+      "renderer": "dry",
+      "density": 0.78,
+      "scale": 2.25,
+      "opacity": 0.28,
+      "blend": "overlay",
+      "description": "Broken pigment dragged across surface tooth."
+    },
+    {
+      "id": "stipple",
+      "name": "Stipple",
+      "category": "mark making",
+      "renderer": "stipple",
+      "density": 0.85,
+      "scale": 1.8,
+      "opacity": 0.28,
+      "blend": "multiply",
+      "description": "Randomized dots and short dabs."
+    },
+    {
+      "id": "crosshatch",
+      "name": "Crosshatch",
+      "category": "mark making",
+      "renderer": "crosshatch",
+      "density": 0.28,
+      "scale": 2.4,
+      "opacity": 0.28,
+      "blend": "multiply",
+      "description": "Layered angled lines for shading and texture."
+    },
+    {
+      "id": "metallic-speckle",
+      "name": "Metallic Speckle",
+      "category": "special effect",
+      "renderer": "metallic",
+      "density": 0.76,
+      "scale": 2.1,
+      "opacity": 0.31,
+      "blend": "screen",
+      "description": "Fine reflective flecks and directional sheen."
+    },
+    {
+      "id": "fluorescent-glow",
+      "name": "Fluorescent Glow",
+      "category": "special effect",
+      "renderer": "fluorescent",
+      "density": 0.12,
+      "scale": 3.0,
+      "opacity": 0.33,
+      "blend": "screen",
+      "description": "High-chroma glow with a soft luminous halo."
+    },
+    {
+      "id": "checker",
+      "name": "Checker Pattern",
+      "density": 0.3,
+      "scale": 4,
+      "opacity": 0.3,
+      "blend": "overlay"
+    },
+    {
+      "id": "stripes",
+      "name": "Diagonal Stripes",
+      "density": 0.25,
+      "scale": 4,
+      "opacity": 0.28,
+      "blend": "overlay"
+    },
+    {
+      "id": "fabric",
+      "name": "Fine Fabric Grid",
+      "density": 0.22,
+      "scale": 3,
+      "opacity": 0.22,
+      "blend": "multiply"
+    },
+    {
+      "id": "noise",
+      "name": "Noise Grain",
+      "density": 0.16,
+      "scale": 2,
+      "opacity": 0.2,
+      "blend": "soft-light"
+    },
+    {
+      "id": "metal",
+      "name": "Metal Sheen",
+      "density": 0.25,
+      "scale": 3,
+      "opacity": 0.28,
+      "blend": "overlay"
+    },
+    {
+      "id": "stars",
+      "name": "Star Field",
+      "density": 0.12,
+      "scale": 4,
+      "opacity": 0.32,
+      "blend": "screen"
+    }
+  ]
+}
