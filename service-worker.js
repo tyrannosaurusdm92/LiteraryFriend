@@ -1,4 +1,4 @@
-const CACHE='literary-friend-shell-v2';
+const CACHE='literary-friend-shell-v3';
 const SHELL=['./','./index.html','./css/luxury-editor.css','./css/keyboard.css','./css/literary-friend.css','./script/js/app.js','./script/js/keyboard.js','./script/js/storage.js','./script/js/languages.js','./script/js/unicode-data.js','./script/js/literary-core.js','./script/js/literary-writer-tools.js','./script/js/helper-safe.js','./script/js/helper-chunks.js','./script/js/literary-friend.js','./script/js/resize-panels.js','./script/js/backend-bridge.js','./script/js/wasm-diagnostics.js','./script/js/wasm-preload.js','./script/wasm/text-diagnostics.wasm','./assets/mark.svg'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)));self.skipWaiting()});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('literary-friend-shell-')&&k!==CACHE).map(k=>caches.delete(k)))));self.clients.claim()});
