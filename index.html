@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#10362D">
-  <meta name="description" content="Literary Friend: channel-based writing rooms, multi-draft studio, tasks, reminders and movable Unicode keyboard.">
+  <meta name="description" content="Literary Friend: channel-based writing rooms, multi-draft studio, tasks, reminders.">
   <title>Literary Friend — Writing Workspace</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/luxury-editor.css">
-  <link rel="stylesheet" href="css/keyboard.css">
+
   <link rel="stylesheet" href="css/literary-friend.css">
   <script defer src="script/js/languages.js"></script>
   <script defer src="script/js/unicode-data.js"></script>
   <script defer src="script/js/storage.js"></script>
-  <script defer src="script/js/keyboard.js"></script>
+
   <script defer src="script/js/app.js"></script>
   <script defer src="script/js/literary-core.js"></script>
   <script defer src="script/js/literary-writer-tools.js"></script>
@@ -53,7 +53,7 @@
     <div class="shell-main">
       <header class="app-topbar">
         <div class="topbar-start"><button class="icon-button mobile-menu" id="toggle-sidebar" aria-label="Toggle channels">☰</button><span class="crumb-workspace" id="crumb-workspace">Library</span><span class="crumb-sep">/</span><strong id="crumb-channel">Manuscript</strong><span class="autosave" id="autosave-status" role="status">Saved locally</span></div>
-        <div class="topbar-actions"><button class="btn tiny light" id="top-task">+ Task</button><button class="btn tiny light" id="open-helper" aria-haspopup="dialog">✎ Helper</button><button class="btn tiny light" id="top-keyboard">⌨ Keyboard</button><button class="btn tiny light" id="toggle-inspector" aria-expanded="true">◫ Planner</button><button class="btn tiny gold" id="export-doc">↓ Export</button></div>
+        <div class="topbar-actions"><button class="btn tiny light" id="top-task">+ Task</button><button class="btn tiny light" id="open-helper" aria-haspopup="dialog">✎ Helper</button><button class="btn tiny light" id="toggle-inspector" aria-expanded="true">◫ Planner</button><button class="btn tiny gold" id="export-doc">↓ Export</button></div>
       </header>
 
       <section class="editor-section" aria-label="Writing workspace">
@@ -78,7 +78,7 @@
       <div class="inspector-content"><div class="planner-card planner-date"><div class="eyebrow">YOUR WRITING DAY</div><div class="today-line" id="date-label">Today</div><div class="today-summary" id="task-summary">No tasks yet.</div><button class="btn green full" id="new-task">+ New task / reminder</button></div>
         <div class="planner-section"><div class="planner-section-title"><h3>Tasks & reminders</h3><select id="task-filter" aria-label="Task filter"><option value="current">Channel</option><option value="workspace">Workspace</option><option value="all">All</option></select></div><div id="task-list" class="tasks"></div></div>
         <div class="planner-section"><div class="planner-section-title"><h3>Channel notes</h3><span class="eyebrow">PRIVATE</span></div><textarea id="channel-notes" placeholder="Ideas, continuity notes, next steps…" aria-label="Channel notes" rows="5"></textarea><small>Notes save with this channel.</small></div>
-        <div class="planner-section"><div class="planner-section-title"><h3>Project tools</h3></div><div class="tool-stacks"><button class="btn outline full" id="new-channel-shortcut">+ Create channel</button><button class="btn outline full" id="open-backup">Back up / restore workspace</button><button class="btn outline full" id="show-keyboard">Open Unicode keyboard</button><button class="btn outline full" id="inspector-helper">Open writing Helper</button></div></div>
+        <div class="planner-section"><div class="planner-section-title"><h3>Project tools</h3></div><div class="tool-stacks"><button class="btn outline full" id="new-channel-shortcut">+ Create channel</button><button class="btn outline full" id="open-backup">Back up / restore workspace</button><button class="btn outline full" id="inspector-helper">Open writing Helper</button></div></div>
       </div>
     </aside>
   </div>
@@ -117,10 +117,5 @@
   <div class="bridge-buttons"><button id="bridge-connect" class="btn green">Connect / sign in</button><button id="bridge-verify" class="btn outline">Verify code</button><button id="bridge-push" class="btn outline">Sync local → cloud</button><button id="bridge-pull" class="btn outline">Restore cloud → local</button><button id="bridge-signout" class="btn outline">Disconnect</button></div>
   <small>Cloud functions require this website's origin to be authorized by the existing backend. Cloud restore replaces the current local library after confirmation. No AI-generation routes are used.</small>
 </div><h3>Uploaded fonts</h3><div id="uploaded-fonts-list">No uploaded fonts.</div><h3>Selected workspace</h3><button class="btn danger" id="delete-workspace">Delete selected workspace</button><p class="fine-print">Reminders are checked while this app is open. Browser notifications require permission and a supported context. Cloud synchronization works only after successful connection to the existing backend bridge.</p></div></dialog>
-
-  <section id="floating-keyboard" class="keyboard-window collapsed" aria-label="Floating on-screen keyboard" aria-hidden="true">
-    <div class="keyboard-header" id="keyboard-handle"><div class="keyboard-brand"><span>⌨</span> Unicode keyboard <small id="keyboard-mode-label">Letters</small></div><div class="keyboard-actions"><button id="keyboard-split" class="keyboard-control" title="Split keyboard" aria-label="Split keyboard">◫</button><button id="keyboard-collapse" class="keyboard-control" title="Collapse keyboard" aria-label="Collapse keyboard">−</button><button id="keyboard-close" class="keyboard-control" title="Close keyboard" aria-label="Close keyboard">×</button></div></div>
-    <div class="keyboard-body" id="keyboard-body"><div class="keyboard-options"><select id="keyboard-language" aria-label="Keyboard language"></select><select id="keyboard-layout" aria-label="Keyboard layout"><option value="letters">Letters</option><option value="extended">Latin Extended</option><option value="combining">Combining marks</option></select><input id="keyboard-search" type="search" placeholder="Find character or U+ code" aria-label="Search Unicode characters" hidden><label class="shift-label"><input id="keyboard-shift" type="checkbox"> Shift</label></div><div id="keyboard-keys" class="keyboard-keys"></div><div class="keyboard-foot"><span id="keyboard-hint">Type into the active writing page.</span><button id="keyboard-nfc" class="keyboard-small" title="Normalize selected text to NFC">NFC</button><span class="resize-hint">↘ resize</span></div></div>
-  </section>
 </body>
 </html>
